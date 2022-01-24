@@ -2,15 +2,23 @@
 
 This is a repo with a bunch of stuff I use regularly.
 
+## [Amazon Web Services ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2)
+
 ## Canva
 
 Can’t forget about graphics and design. I like Canva so I use it.
 
 [](https://www.canva.com/)
 
-## CloudFlare
+## [CloudFlare](https://dash.cloudflare.com/)
 
-## Docker
+- [Developers](https://developers.cloudflare.com/)
+
+## [DevDocs.io](https://devdocs.io/)
+
+## Docker 
+
+- [Docs](https://docs.docker.com/)
 
 ### Clean up Docker before starting
 
@@ -87,6 +95,10 @@ Linux Basics
 ### How to set up a self signed certificate with a Custom Root CA
 
 [Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
+
+## [Microsoft 365](https://www.office.com/)
+
+- | [Admin Console](https://admin.microsoft.com/Adminportal/Home) | [Outlook](https://outlook.office365.com/mail/inbox) | [Teams](https://teams.microsoft.com/)
 
 ## Node Version Manager
 
