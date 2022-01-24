@@ -14,7 +14,11 @@ Can’t forget about graphics and design. I like Canva so I use it.
 
 ## [CloudFlare](https://dash.cloudflare.com/)
 
-- [Developers](https://developers.cloudflare.com/)
+[Developers](https://developers.cloudflare.com/)
+
+## [CyberChef](https://gchq.github.io/CyberChef/)
+
+CyberChef - The Cyber Swiss Army Knife
 
 ## [DevDocs.io](https://devdocs.io/)
 
@@ -75,6 +79,10 @@ git config --global user.email "dean@deanlofts.xyz"
 git clone https://github.com/loftwah/apptizle.io && cd apptizle.io
 code .
 ```
+
+## Google
+
+| [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1)
 
 ## Linux
 
