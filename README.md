@@ -2,7 +2,9 @@
 
 This is a repo with a bunch of stuff I use regularly.
 
-## [Amazon Web Services ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2)
+## Amazon Web Services
+
+[ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2)
 
 ## Canva
 
