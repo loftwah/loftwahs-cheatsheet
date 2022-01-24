@@ -1,4 +1,4 @@
-# Loftwah Cheatsheet
+# Loftwah's Cheatsheet
 
 This is a repo with a bunch of stuff I use regularly.
 
