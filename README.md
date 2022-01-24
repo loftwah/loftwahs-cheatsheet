@@ -6,7 +6,7 @@ This is a repo with a bunch of stuff I use regularly.
 
 [ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2)
 
-## Canva
+## [Canva](https://canva.com)
 
 Can’t forget about graphics and design. I like Canva so I use it.
 
