@@ -18,7 +18,7 @@ Can’t forget about graphics and design. I like Canva so I use it.
 
 ## Docker 
 
-- [Docs](https://docs.docker.com/)
+[Docs](https://docs.docker.com/)
 
 ### Clean up Docker before starting
 
@@ -98,7 +98,7 @@ Linux Basics
 
 ## [Microsoft 365](https://www.office.com/)
 
-- | [Admin Console](https://admin.microsoft.com/Adminportal/Home) | [Outlook](https://outlook.office365.com/mail/inbox) | [Teams](https://teams.microsoft.com/)
+| [Admin Console](https://admin.microsoft.com/Adminportal/Home) | [Outlook](https://outlook.office365.com/mail/inbox) | [Teams](https://teams.microsoft.com/)
 
 ## Node Version Manager
 
