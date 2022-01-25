@@ -22,38 +22,38 @@ CyberChef - The Cyber Swiss Army Knife
 
 ## [DevDocs.io](https://devdocs.io/)
 
-## Docker 
+## Docker
 
 [Docs](https://docs.docker.com/)
 
-*   Docker resources usage - `docker info`
-*   know how much space is taken by a particular container `docker container ls -s`
-*   Know how much spaces is used by Docker Root Dir `du -h --max-depth=1 /var/lib/docker`
-*   Docker storage usage `docker system df`
-*   Docker list volumes `docker volume ls`
-*   Docker list images that are locally stored with the Docker Engine `docker image ls`
-*   Docker inspect volumes `docker volume inspect VOLUME NAME`
-*   Remove a group of images - `docker images | grep "<none>" | awk '{print $3}' | xargs docker rmi`
-*   Remove all untagged containers - `docker rm $(docker ps -aq --filter status=exited)`
-*   Remove all untagged images - `docker rmi $(docker images -q --filter dangling=true)`
-*   Remove old (dangling) Docker volumes - `docker volume rm $(docker volume ls -qf dangling=true)`
-*   Docker remove redundant objects at once `docker system prune`
-*   Install on Ubuntu - `curl -sSL https://get.docker.com/ubuntu/ | sudo sh`
-*   Get stats from all containers on a host - `docker ps -q | xargs docker stats`
-*   Tail last 300 lines of logs for a container - `docker logs --tail=300 -f <container_id>`
-*   Build an image from the Dockerfile in thecurrent directory and tag the image `docker build -t myimage:1.0 .`
-*   Pull an image from a registry `docker pull myimage:1.0`
-*   Retag a local image with a new image name and tag `docker tag myimage:1.0 myrepo/myimage:2.0`
-*   Push an image to a registry `docker push myrepo/myimage:2.0`
-*   Run a container from the Alpine version 3.9 image, name the running container “web” and expose port 5000 externally, mapped to port 80 inside the container `docker container run --name web -p 5000:80 alpine:3.9`
-*   Stop a running container through SIGTERM `docker container stop web`
-*   Stop a running container through SIGKILL `docker container kill web`
-*   List the networks `docker network ls`
-*   Copy Docker images from one host to another without using a repository
+- Docker resources usage - `docker info`
+- know how much space is taken by a particular container `docker container ls -s`
+- Know how much spaces is used by Docker Root Dir `du -h --max-depth=1 /var/lib/docker`
+- Docker storage usage `docker system df`
+- Docker list volumes `docker volume ls`
+- Docker list images that are locally stored with the Docker Engine `docker image ls`
+- Docker inspect volumes `docker volume inspect VOLUME NAME`
+- Remove a group of images - `docker images | grep "<none>" | awk '{print $3}' | xargs docker rmi`
+- Remove all untagged containers - `docker rm $(docker ps -aq --filter status=exited)`
+- Remove all untagged images - `docker rmi $(docker images -q --filter dangling=true)`
+- Remove old (dangling) Docker volumes - `docker volume rm $(docker volume ls -qf dangling=true)`
+- Docker remove redundant objects at once `docker system prune`
+- Install on Ubuntu - `curl -sSL https://get.docker.com/ubuntu/ | sudo sh`
+- Get stats from all containers on a host - `docker ps -q | xargs docker stats`
+- Tail last 300 lines of logs for a container - `docker logs --tail=300 -f <container_id>`
+- Build an image from the Dockerfile in thecurrent directory and tag the image `docker build -t myimage:1.0 .`
+- Pull an image from a registry `docker pull myimage:1.0`
+- Retag a local image with a new image name and tag `docker tag myimage:1.0 myrepo/myimage:2.0`
+- Push an image to a registry `docker push myrepo/myimage:2.0`
+- Run a container from the Alpine version 3.9 image, name the running container “web” and expose port 5000 externally, mapped to port 80 inside the container `docker container run --name web -p 5000:80 alpine:3.9`
+- Stop a running container through SIGTERM `docker container stop web`
+- Stop a running container through SIGKILL `docker container kill web`
+- List the networks `docker network ls`
+- Copy Docker images from one host to another without using a repository
 
 ```bash
 #Step1 - Save the Docker image as a tar file
-docker save -o <path for generated tar file> <image name> 
+docker save -o <path for generated tar file> <image name>
 
 #Example
 docker save -o c:/myfile.tar centos:16
@@ -103,9 +103,9 @@ docker-compose version
 ```
 
 #### Shell Scripts
-    
-*   Shell Script to Install Docker on Ubuntu
-    
+
+- Shell Script to Install Docker on Ubuntu
+
 ```bash
 #!/bin/bash
 set -e
@@ -139,8 +139,8 @@ sudo usermod -a -G docker $USER
 docker -v
 ```
 
-*   Shell Script to Install Docker on Centos
-    
+- Shell Script to Install Docker on Centos
+
 ```bash
    #!/bin/bash
    #Get Docker Engine - Community for CentOS + docker compose
@@ -164,7 +164,7 @@ sudo usermod -a -G docker $(whoami)
 docker -v
 ```
 
-*   Shell Script to Install Docker on AWS linux
+- Shell Script to Install Docker on AWS linux
 
 ```bash
 #!/bin/bash
@@ -183,12 +183,12 @@ sudo service docker start
 sudo usermod -a -G docker $(whoami)
 # Output current version
  docker -v
-```    
+```
 
 **Docker Compose**
 
-*   Shell Script to Install the latest version of docker-compose
-    
+- Shell Script to Install the latest version of docker-compose
+
 ```bash
 #!/bin/bash
 # get latest docker compose released tag
@@ -198,11 +198,11 @@ sudo chmod a+x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 # Output the  version
 docker-compose -v
-```    
+```
 
 **Dockerfile**
 
-*   Dockerizing a simple nodeJs app
+- Dockerizing a simple nodeJs app
 
 ```dockerfile
 FROM node:4.6
@@ -228,22 +228,22 @@ git config --global user.email "dean@deanlofts.xyz"
 git clone https://github.com/loftwah/apptizle.io && cd apptizle.io
 code .
 ```
-    
+
 **Git**
 
-*   Remove deleted files from repo - `git rm $(git ls-files --deleted)`
-*   Reset git repo (dangerous) - `git reset --hard HEAD`
-*   Reset and remove untracked changes in repo - `git clean -xdf`
-*   Ignore certificates when cloning via HTTPS - `git config --global http.sslVerify false`
-*   Pull changes and remove stale branches - `git pull --prune`
-*   Grab the diff of a previous version of a file - `git diff HEAD@{1} ../../production.hosts`
-*   Grab the diff of a staged change - `git diff --cached <file>`
-*   Undo a commit to a branch - `git reset --soft HEAD~1`
-*   View files changed in a commit - `git log --stat`
-*   Pull latest changes stashing changes first - `git pull --autostash`
-*   Make an empty commit (good for CI) - `git commit --allow-empty -m "Trigger notification"`
-*   Change remote repository URL - `git remote set-url origin git://new.location"`
-*   fix ".gitignore not working" issue
+- Remove deleted files from repo - `git rm $(git ls-files --deleted)`
+- Reset git repo (dangerous) - `git reset --hard HEAD`
+- Reset and remove untracked changes in repo - `git clean -xdf`
+- Ignore certificates when cloning via HTTPS - `git config --global http.sslVerify false`
+- Pull changes and remove stale branches - `git pull --prune`
+- Grab the diff of a previous version of a file - `git diff HEAD@{1} ../../production.hosts`
+- Grab the diff of a staged change - `git diff --cached <file>`
+- Undo a commit to a branch - `git reset --soft HEAD~1`
+- View files changed in a commit - `git log --stat`
+- Pull latest changes stashing changes first - `git pull --autostash`
+- Make an empty commit (good for CI) - `git commit --allow-empty -m "Trigger notification"`
+- Change remote repository URL - `git remote set-url origin git://new.location"`
+- fix ".gitignore not working" issue
 
 ```bash
 Update .gitignore with the folder/file name you want to ignore. You can use anyone of the formats mentioned below (prefer format1)
@@ -265,7 +265,7 @@ Now execute
 
 git add .
 
-git commit -m "fixed untracked files" 
+git commit -m "fixed untracked files"
 
 git push
 ```
@@ -274,11 +274,26 @@ git push
 
 | [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1) |
 
+## Jenkins
+
+- Setup Jenkins on Amazon Linux 2
+
+```bash
+#!/bin/bash
+sudo yum update -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum install java-1.8.0 -y
+sudo yum install jenkins -y
+sudo service jenkins start
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
 ## Linux
 
 ### How to install Linux?
 
-We’re going to be using Ubuntu for our example and you can download it here. 
+We’re going to be using Ubuntu for our example and you can download it here.
 
 [Get Ubuntu Server | Download | Ubuntu](https://ubuntu.com/download/server)
 
@@ -299,6 +314,18 @@ Linux Basics
 ## [Microsoft 365](https://www.office.com/)
 
 | [Admin Console](https://admin.microsoft.com/Adminportal/Home) | [Outlook](https://outlook.office365.com/mail/inbox) | [Teams](https://teams.microsoft.com/) |
+
+## Nginx
+
+| [Config Tool](https://www.digitalocean.com/community/tools/nginx) | [Nginx Proxy Manager](https://nginxproxymanager.com/setup/) |
+
+- Check installed modules - `nginx -V`
+- Pretty print installed modules - `2>&1 nginx -V | xargs -n1`
+- Test a configuration without reloading - `nginx -t`
+- Stop all nginx processes - `nginx -s stop`
+- Start all nginx processes - `nginx -s start`
+- Restart all nginx processes - `nginx -s restart`
+- Realod nginx configuration (without restarting) - `nginx -s reload`
 
 ## Node Version Manager
 
@@ -358,7 +385,7 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
 
 ### Templates
 
-The following URLs can be used for Templates in Portainer: 
+The following URLs can be used for Templates in Portainer:
 
 [](https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json)
 
@@ -391,6 +418,8 @@ lsof -ni | grep LISTEN
 
 ### General Linux
 
+[Crontab Guru Examples](https://crontab.guru/examples.html)
+
 ```bash
 Copy the content of a folder to an existing folder
 cp -a /source/. /dest/
@@ -414,16 +443,71 @@ du -ah / | sort -n -r | head -n 50
 # Show directory sizes (must not be in root directory)
 du -sh *
 # Check disk usage per directory
-du -h <dir> | grep '[0-9\.]\+G’
+du -h <dir> | grep [0-9\.]\+G
 # Look for growing directories
 watch -n 10 df -ah
 # Ncurses based disk usage
 ncdu -q
 # Exlcude directories in find
 find /tmp -not \( -path /tmp/dir -prune \) -type p -o -type b
+# Remove files over 30 days old
+find . -mtime +30 | xargs rm -rf
+# Remove files older than 7 day starting with 'backup'
+find . -type f -name "backup*" -mtime +7 -exec rm {} \;
+# Generate generic ssh key pair
+ssh-keygen -q -t rsa -f ~/.ssh/<name> -N '' -C <name>
+# AWS PEM key to ssh PUB key
+ssh-keygen -y -f eliarms.pem > eliarms.pub
 ```
 
-### Openssl
+#### Grep
+
+- Look through all files in current dir for word “foo” - `grep -R "foo” .`
+- View last ten lines of output - `grep -i -C 10 "invalid view source” /var/log/info.log`
+- Display line number of message - `grep -n “pattern” <file>`
+
+#### ps
+
+- Show process tree of all PIDs - `ps auxwf`
+- Show all process info and hierarchy (same as above)- `ps -efH`
+- Show orphaned processes for - `ps -ef|awk '$3=="1" && /pandora/ { print $2 }'`
+- Show all orphaned processes (could be daemons) - `ps -elf | awk '{if ($5 == 1){print $4" "$5" "$15}}'`
+- Show zombie processes - `ps aux | grep Z`
+
+#### Networking
+
+```bash
+# Check your public IP
+curl http://whatismyip.org/
+curl ifconfig.me
+curl icanhazip.com
+# Return the IP of an interface
+ifconfig en0 | grep --word-regexp inet | awk '{print $2}'
+ip add show eth0 | awk '/inet/ {print $2}' | cut -d/ -f1 | head -1
+ip -br a sh eth0 | awk '{ print $3 }' (returns netmask)
+ip route show dev eth0 | awk '{print $7}'
+hostname -I (return ip only)
+Check domain with specific NS
+dig <example.com> @<ns-server>
+Get NS records for a site
+dig <example.com> ns
+# Check nat rules for ip redirection
+iptables -nvL -t nat
+```
+
+##### Nmap
+
+- Check single port on single host - `nmap -p <port> <host/IP>`
+- Intrusive port scan on a single host - `nmap -sS <host/IP>`
+- Top ten port on a single host - `nmap --top-ports 10 <host/IP>`
+
+#### Password generation
+
+- Create hash from password - `openssl passwd -crypt <password>`
+- Generate random 8 character password (Ubuntu) - `makepasswd -count 1 -minchars 8`
+- Create .passwd file with user and random password - `sudo htpasswd -c /etc/nginx/.htpasswd <user>`
+
+#### Openssl
 
 ```bash
 # verify if TLS 1.2 is supported
@@ -458,151 +542,8 @@ openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificat
 awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' your_private_key.pem > output.txt
 ```
 
-### Networking
+#### Tail log with colored output
 
-```bash
-# Check your public IP
-curl http://whatismyip.org/
-curl ifconfig.me
-curl icanhazip.com
-# Return the IP of an interface
-ifconfig en0 | grep --word-regexp inet | awk '{print $2}'
-ip add show eth0 | awk '/inet/ {print $2}' | cut -d/ -f1 | head -1
-ip -br a sh eth0 | awk '{ print $3 }' (returns netmask)
-ip route show dev eth0 | awk '{print $7}'
-hostname -I (return ip only)
-Check domain with specific NS
-dig <example.com> @<ns-server>
-Get NS records for a site
-dig <example.com> ns
-```
+- `grc tail -f /var/log/filename`
 
-### Cron
-
-[Crontab Guru Examples](https://crontab.guru/examples.html)
-
-**Jenkins**
-
-*   Setup Jenkins on EC2
-
-#!/bin/bash
-sudo yum update -y
-sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-sudo yum install java-1.8.0 -y
-sudo yum install jenkins -y
-sudo service jenkins start
-
-sudo cat
-/var/lib/jenkins/secrets/initialAdminPassword
-
-**Grep**
-
-*   Look through all files in current dir for word “foo” - `grep -R "foo” .`
-*   View last ten lines of output - `grep -i -C 10 "invalid view source” /var/log/info.log`
-*   Display line number of message - `grep -n “pattern” <file>`
-
-**Iptables**
-
-*   Check nat rules for ip redirection - `iptables -nvL -t nat`
-
-**Apache**
-
-*   Turn off “ServerSignature” and “ServerToken” on Apache
-    
-    *   Edit httpd.conf or apache2.conf
-    
-    // Kali, Debian, Ubuntu  Linux Mint
-      sudo vi /etc/apache2/apache2.conf
-    // CentOS, Fedora, RHEL , Arch Linux
-     sudo vi /etc/httpd/conf/httpd.conf
-    
-    *   Add below settings to the file
-    
-       ServerSignature Off
-       ServerTokens Prod
-    
-    *   Restart Apache
-    
-    // Kali, Debian, Ubuntu Linux Mint
-       sudo service apache2 restart
-    //Fedora, CentOS/RHEL 7,Arch Linux
-     systemctl restart httpd.service
-    
-
-**Nginx**
-
-*   Check installed modules - `nginx -V`
-*   Pretty print installed modules - `2>&1 nginx -V | xargs -n1`
-*   Test a configuration without reloading - `nginx -t`
-*   Stop all nginx processes - `nginx -s stop`
-*   Start all nginx processes - `nginx -s start`
-*   Restart all nginx processes - `nginx -s restart`
-*   Realod nginx configuration (without restarting) - `nginx -s reload`
-
-**Tomcat**
-
-*   Hide tomcat stack traces (showReport) as well as the Server info: Add below lines at the HOST section
-    
-    <Valve className="org.apache.catalina.valves.ErrorReportValve"
-    showReport="false"
-    showServerInfo="false" />
-    
-
-*   Injecting HTTP Response with the secure header in Tomcat
-    
-    <filter>
-        <filter-name>httpHeaderSecurity</filter-name>
-        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
-        <async-supported>true</async-supported>
-        <init-param>
-          <param-name>antiClickJackingEnabled</param-name>
-          <param-value>true</param-value>
-        </init-param>
-        <init-param>
-          <param-name>antiClickJackingOption</param-name>
-          <param-value>DENY</param-value>
-        </init-param>
-        </filter>
-        <filter-mapping>
-        <filter-name>httpHeaderSecurity</filter-name>
-        <url-pattern>/\*</url-pattern>
-        </filter-mapping>
-        <welcome-file-list>
-      <welcome-file>index.html</welcome-file>
-        </welcome-file-list>
-    
-
-**Nmap**
-
-*   Check single port on single host - `nmap -p <port> <host/IP>`
-*   Intrusive port scan on a single host - `nmap -sS <host/IP>`
-*   Top ten port on a single host - `nmap --top-ports 10 <host/IP>`
-
-**Password generation**
-
-*   Create hash from password - `openssl passwd -crypt <password>`
-*   Generate random 8 character password (Ubuntu) - `makepasswd -count 1 -minchars 8`
-*   Create .passwd file with user and random password - `sudo htpasswd -c /etc/nginx/.htpasswd <user>`
-
-**Removing files**
-
-*   Remove files over 30 days old - `find . -mtime +30 | xargs rm -rf`
-*   Remove files older than 7 day starting with 'backup' - `find . -type f -name "backup*" -mtime +7 -exec rm {} \;`
-
-**SSH**
-
-*   Generate generic ssh key pair - `ssh-keygen -q -t rsa -f ~/.ssh/<name> -N '' -C <name>`
-*   AWS PEM key to ssh PUB key : `ssh-keygen -y -f eliarms.pem > eliarms.pub`
-
-**Tail log with colored output**
-
-*   `grc tail -f /var/log/filename`
-
-**ps**
-
-*   Show process tree of all PIDs - `ps auxwf`
-*   Show all process info and hierarchy (same as above)- `ps -efH`
-*   Show orphaned processes for - `ps -ef|awk '$3=="1" && /pandora/ { print $2 }'`
-*   Show all orphaned processes (could be daemons) - `ps -elf | awk '{if ($5 == 1){print $4" "$5" "$15}}'`
-*   Show zombie processes - `ps aux | grep Z`
+## Searching
