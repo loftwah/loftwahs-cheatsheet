@@ -6,7 +6,7 @@ This is a repo with a bunch of stuff I use regularly.
 
 ## Links
 
-| [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [Cloudflare Developers](https://developers.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
+| [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [AWS Guide](https://github.com/open-guides/og-aws) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [Cloudflare Developers](https://developers.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
  | [DevDocs.io](https://devdocs.io/) | [PhotoPea](https://photopea.com) | 
  
 ### Google
@@ -1018,6 +1018,99 @@ Port for SSL: 465
 Port for TLS/STARTTLS: 587
 ```
 
+### Environmental Variables
+
+```bash
+# AWS
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AMAZON_AWS_ACCESS_KEY_ID
+AMAZON_AWS_SECRET_ACCESS_KEY
+
+# Azure
+AZURE_CLIENT_ID
+AZURE_CLIENT_SECRET
+AZURE_USERNAME
+AZURE_PASSWORD
+MSI_ENDPOINT
+MSI_SECRET
+
+# DigitalOcean
+DIGITALOCEAN_ACCESS_TOKEN
+
+# Dockerhub
+DOCKERHUB_PASSWORD
+
+# Facebook
+FACEBOOK_APP_ID
+FACEBOOK_APP_SECRET
+FACEBOOK_ACCESS_TOKEN
+
+# GitHub
+GH_TOKEN
+GITHUB_TOKEN
+GH_ENTERPRISE_TOKEN
+GITHUB_ENTERPRISE_TOKEN
+
+# Google Cloud
+GOOGLE_APPLICATION_CREDENTIALS
+GOOGLE_API_KEY
+
+# Gitlab
+CI_DEPLOY_USER
+CI_DEPLOY_PASSWORD
+GITLAB_USER_LOGIN
+CI_JOB_JWT
+CI_JOB_JWT_V2
+CI_JOB_TOKEN
+
+# Mailgun
+MAILGUN_API_KEY
+
+# MongoDB
+MCLI_PRIVATE_API_KEY
+MCLI_PUBLIC_API_KEY
+
+# NPM
+NPM_TOKEN
+
+# Sentry
+SENTRY_AUTH_TOKEN
+
+# Slack
+SLACK_TOKEN
+
+# Square
+square_access_token
+square_oauth_secret
+
+# Stripe
+STRIPE_API_KEY
+STRIPE_DEVICE_NAME
+
+# Twilio
+TWILIO_ACCOUNT_SID
+TWILIO_AUTH_TOKEN
+
+# Twitter
+CONSUMER_KEY
+CONSUMER_SECRET
+
+# Travis CI
+TRAVIS_SUDO
+TRAVIS_OS_NAME
+TRAVIS_SECURE_ENV_VARS
+
+# HashiCorp Vault
+VAULT_TOKEN
+VAULT_CLIENT_KEY
+
+# Vultr
+TOKEN
+VULTR_ACCESS
+VULTR_SECRET
+```
+
 ### Awesome (Topic)
 
-| [Azure Policy](https://github.com/globalbao/awesome-azure-policy) | [Data Science](https://github.com/academic/awesome-datascience) | [GitHub Actions](https://github.com/sdras/awesome-actions) | [Golang](https://github.com/avelino/awesome-go) | [GraphQL](https://github.com/chentsulin/awesome-graphql) | [JavaScript Mini Projects](https://github.com/thinkswell/javascript-mini-projects) | [Leading and managing](https://github.com/LappleApple/awesome-leading-and-managing) | [Naming](https://github.com/gruhn/awesome-naming) | [No login web apps](https://github.com/aviaryan/awesome-no-login-web-apps) | [Nodejs Security](https://github.com/lirantal/awesome-nodejs-security) | [Notebooks](https://github.com/jupyter-naas/awesome-notebooks) | [OSINT](https://github.com/jivoi/awesome-osint) | [Pentest](https://github.com/enaqx/awesome-pentest) | [Privacy](https://github.com/pluja/awesome-privacy) | [Prometheus Alerts](https://github.com/samber/awesome-prometheus-alerts) | [Python](https://github.com/vinta/awesome-python) | [Python Scripts](https://github.com/prathimacode-hub/Awesome_Python_Scripts) | [Rust](https://github.com/rust-unofficial/awesome-rust) | [SaaS Boilerplates](https://github.com/smirnov-am/awesome-saas-boilerplates) | [Self Hosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | [Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture) | [Tech Blogs](https://github.com/markodenic/awesome-tech-blogs) | [Technical Writing](https://github.com/BolajiAyodeji/awesome-technical-writing) |
+| [Azure Policy](https://github.com/globalbao/awesome-azure-policy) | [Data Science](https://github.com/academic/awesome-datascience) | [GitHub Actions](https://github.com/sdras/awesome-actions) | [Golang](https://github.com/avelino/awesome-go) | [GraphQL](https://github.com/chentsulin/awesome-graphql) | [Guidelines](https://github.com/Kristories/awesome-guidelines) | [JavaScript Mini Projects](https://github.com/thinkswell/javascript-mini-projects) | [json](https://github.com/burningtree/awesome-json) | [Leading and managing](https://github.com/LappleApple/awesome-leading-and-managing) | [Naming](https://github.com/gruhn/awesome-naming) | [No login web apps](https://github.com/aviaryan/awesome-no-login-web-apps) | [Nodejs Security](https://github.com/lirantal/awesome-nodejs-security) | [Notebooks](https://github.com/jupyter-naas/awesome-notebooks) | [OSINT](https://github.com/jivoi/awesome-osint) | [Pentest](https://github.com/enaqx/awesome-pentest) | [Privacy](https://github.com/pluja/awesome-privacy) | [Prometheus Alerts](https://github.com/samber/awesome-prometheus-alerts) | [Python](https://github.com/vinta/awesome-python) | [Python Scripts](https://github.com/prathimacode-hub/Awesome_Python_Scripts) | [Rust](https://github.com/rust-unofficial/awesome-rust) | [SaaS Boilerplates](https://github.com/smirnov-am/awesome-saas-boilerplates) | [Self Hosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | [Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture) | [Tech Blogs](https://github.com/markodenic/awesome-tech-blogs) | [Technical Writing](https://github.com/BolajiAyodeji/awesome-technical-writing) | [UUID](https://github.com/grantcarthew/awesome-unique-id) |
