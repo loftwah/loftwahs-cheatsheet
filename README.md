@@ -1049,3 +1049,7 @@ Requires Authentication: Yes (I got this off the website, I use it without auth 
 Port for SSL: 465
 Port for TLS/STARTTLS: 587
 ```
+
+### Awesome (Topic)
+
+| [Azure Policy](https://github.com/globalbao/awesome-azure-policy) | [Data Science](https://github.com/academic/awesome-datascience) | [GitHub Actions](https://github.com/sdras/awesome-actions) | [Golang](https://github.com/avelino/awesome-go) | [GraphQL](https://github.com/chentsulin/awesome-graphql) | [Leading and managing](https://github.com/LappleApple/awesome-leading-and-managing) | [Naming](https://github.com/gruhn/awesome-naming) | [No login web apps](https://github.com/aviaryan/awesome-no-login-web-apps) | [Notebooks](https://github.com/jupyter-naas/awesome-notebooks) | [Privacy](https://github.com/pluja/awesome-privacy) | [Python](https://github.com/vinta/awesome-python) | [Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture) | [Technical Writing](https://github.com/BolajiAyodeji/awesome-technical-writing) |
