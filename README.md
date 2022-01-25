@@ -28,30 +28,34 @@ CyberChef - The Cyber Swiss Army Knife
 
 [Docs](https://docs.docker.com/)
 
-- Docker resources usage - `docker info`
-- know how much space is taken by a particular container `docker container ls -s`
-- Know how much spaces is used by Docker Root Dir `du -h --max-depth=1 /var/lib/docker`
-- Docker storage usage `docker system df`
-- Docker list volumes `docker volume ls`
-- Docker list images that are locally stored with the Docker Engine `docker image ls`
-- Docker inspect volumes `docker volume inspect VOLUME NAME`
-- Remove a group of images - `docker images | grep "<none>" | awk '{print $3}' | xargs docker rmi`
-- Remove all untagged containers - `docker rm $(docker ps -aq --filter status=exited)`
-- Remove all untagged images - `docker rmi $(docker images -q --filter dangling=true)`
-- Remove old (dangling) Docker volumes - `docker volume rm $(docker volume ls -qf dangling=true)`
-- Docker remove redundant objects at once `docker system prune`
-- Install on Ubuntu - `curl -sSL https://get.docker.com/ubuntu/ | sudo sh`
-- Get stats from all containers on a host - `docker ps -q | xargs docker stats`
-- Tail last 300 lines of logs for a container - `docker logs --tail=300 -f <container_id>`
-- Build an image from the Dockerfile in thecurrent directory and tag the image `docker build -t myimage:1.0 .`
-- Pull an image from a registry `docker pull myimage:1.0`
-- Retag a local image with a new image name and tag `docker tag myimage:1.0 myrepo/myimage:2.0`
-- Push an image to a registry `docker push myrepo/myimage:2.0`
-- Run a container from the Alpine version 3.9 image, name the running container “web” and expose port 5000 externally, mapped to port 80 inside the container `docker container run --name web -p 5000:80 alpine:3.9`
-- Stop a running container through SIGTERM `docker container stop web`
-- Stop a running container through SIGKILL `docker container kill web`
-- List the networks `docker network ls`
-- Copy Docker images from one host to another without using a repository
+```bash
+# To start the docker daemon:
+docker -d
+# To start a container with an interactive shell:
+docker run -ti <image-name> /bin/bash
+# To "shell" into a running container (docker-1.3+):
+docker exec -ti <container-name> bash
+# To inspect a running container:
+docker inspect <container-name> (or <container-id>)
+# To get the process ID for a container:
+docker inspect --format {{.State.Pid}} <container-name-or-id>
+# To list (and pretty-print) the current mounted volumes for a container:
+docker inspect --format='{{json .Volumes}}' <container-id> | python -mjson.tool
+# To copy files/folders between a container and your host:
+docker cp foo.txt mycontainer:/foo.txt
+# To list currently running containers:
+docker ps
+# To list all containers:
+docker ps -a
+# To remove all stopped containers:
+docker rm $(docker ps -qa)
+# To list all images:
+docker images
+# To remove all untagged images:
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+# To remove all volumes not used by at least one container:
+docker volume prune
+```
 
 ```bash
 #Step1 - Save the Docker image as a tar file
