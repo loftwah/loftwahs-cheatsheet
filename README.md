@@ -6,7 +6,7 @@ This is a repo with a bunch of stuff I use regularly.
 
 ## Links
 
-[AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [Cloudflare Developers](https://developers.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
+| [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [Cloudflare Developers](https://developers.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
  | [DevDocs.io](https://devdocs.io/) | [PhotoPea](https://photopea.com) | 
  
 ### Google
