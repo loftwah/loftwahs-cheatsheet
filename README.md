@@ -747,3 +747,297 @@ msg "- flag: ${flag}"
 msg "- param: ${param}"
 msg "- arguments: ${args[*]-}"
 ```
+
+### Docker-Compose in GitHub Action
+
+```yaml
+name: Test
+
+on:
+  push:
+    branches:
+    - main
+    - features/**
+    - dependabot/**
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  docker:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Start containers
+      run: docker-compose -f "docker-compose.yml" up -d --build
+
+    - name: Install node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm run test
+
+    - name: Stop containers
+      if: always()
+      run: docker-compose -f "docker-compose.yml" down
+```
+
+### Stack data structure in Bash
+
+```bash
+class Stack {
+    constructor() {
+        this.items = []
+        this.count = 0
+    }
+
+    // Add element to top of stack
+    push(element) {
+        this.items[this.count] = element
+        console.log(`${element} added to ${this.count}`)
+        this.count += 1
+        return this.count - 1
+    }
+
+    // Return and remove top element in stack
+    // Return undefined if stack is empty
+    pop() {
+        if(this.count == 0) return undefined
+        let deleteItem = this.items[this.count - 1]
+        this.count -= 1
+        console.log(`${deleteItem} removed`)
+        return deleteItem
+    }
+
+    // Check top element in stack
+    peek() {
+        console.log(`Top element is ${this.items[this.count - 1]}`)
+        return this.items[this.count - 1]
+    }
+
+    // Check if stack is empty
+    isEmpty() {
+        console.log(this.count == 0 ? 'Stack is empty' : 'Stack is NOT empty')
+        return this.count == 0
+    }
+
+    // Check size of stack
+    size() {
+        console.log(`${this.count} elements in stack`)
+        return this.count
+    }
+
+    // Print elements in stack
+    print() {
+        let str = ''
+        for(let i = 0; i < this.count; i++) {
+            str += this.items[i] + ' '
+        }
+        return str
+    }
+
+    // Clear stack
+    clear() {
+        this.items = []
+        this.count = 0
+        console.log('Stack cleared..')
+        return this.items
+    }
+}
+
+const stack = new Stack()
+
+stack.isEmpty()
+
+stack.push(100)
+stack.push(200)
+
+stack.peek()
+
+stack.push(300)
+
+console.log(stack.print())
+
+stack.pop()
+stack.pop()
+
+stack.clear()
+
+console.log(stack.print())
+
+stack.size()
+
+stack.isEmpty()
+```
+
+### HTTPS Request with Node.js and TypeScript
+
+```bash
+import https, { RequestOptions } from 'https';
+
+export interface HttpRequest extends RequestOptions {
+  url: string;
+  body?: string;
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS';
+}
+
+interface Response<T = Buffer | any> {
+  body: T;
+  statusCode: number;
+}
+
+export default async function httpRequest<T = Buffer | any>(
+  options: HttpRequest,
+): Promise<Response<T>> {
+  const { url, body, ...rest } = options;
+
+  if (!rest.method) {
+    rest.method = 'GET';
+  }
+
+  const response = await new Promise<Response>((resolve, reject) => {
+    const chunks: any[] = [];
+
+    const request = https.request(url, rest, httpResponse => {
+      httpResponse.on('error', reject);
+      httpResponse.on('data', chunk => chunks.push(chunk));
+
+      httpResponse.on('end', () => {
+        let buffer = Buffer.concat(chunks);
+
+        try {
+          buffer = JSON.parse(buffer.toString());
+        } catch {
+          //
+        }
+
+        resolve({
+          body: buffer,
+          statusCode: httpResponse.statusCode ?? 500,
+        });
+      });
+    });
+
+    request.on('error', reject);
+
+    if (['POST', 'PUT', 'PATCH'].includes(rest.method) && body) {
+      request.write(body);
+    }
+
+    request.end();
+  });
+
+  if (response.statusCode >= 400) {
+    throw new Error(`Unable to make request in ([${rest.method}] ${url}).`);
+  }
+
+  return response;
+}
+```
+
+### Python function to calculate aspect ratio of an image
+
+```python
+def calculate_aspect(width: int, height: int) -> str:
+    def gcd(a, b):
+        """The GCD (greatest common divisor) is the highest number that evenly divides both width and height."""
+        return a if b == 0 else gcd(b, a % b)
+
+    r = gcd(width, height)
+    x = int(width / r)
+    y = int(height / r)
+
+    return f"{x}:{y}"
+    
+calculate_aspect(1920, 1080) # '16:9'
+```
+
+### HTML Simple Maintenance Page
+
+```html
+<!doctype html>
+<title>Site Maintenance</title>
+<style>
+  body { text-align: center; padding: 150px; }
+  h1 { font-size: 50px; }
+  body { font: 20px Helvetica, sans-serif; color: #333; }
+  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+  a { color: #dc8100; text-decoration: none; }
+  a:hover { color: #333; text-decoration: none; }
+</style>
+
+<article>
+    <h1>We&rsquo;ll be back soon!</h1>
+    <div>
+        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>&mdash; The Team</p>
+    </div>
+</article>
+```
+
+### Download the latest release from GitHub
+
+```bash
+curl -s https://api.github.com/repos/jgm/pandoc/releases/latest \
+| grep "browser_download_url.*deb" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -qi -
+```
+
+### SMTP Settings for common providers
+
+#### Microsoft 365
+
+To send emails using Office365 server enter these details:
+
+```bash
+SMTP Host: smtp.office365.com
+SMTP Port: 587
+SSL Protocol: OFF
+TLS Protocol: ON
+SMTP Username: (your Office365 username)
+SMTP Password: (your Office365 password)
+
+POP3 Host: outlook.office365.com
+POP3 Port: 995
+TLS Protocol: ON
+POP3 Username: (your Office365 username)
+POP3 Password: (your Office365 password)
+
+IMAP Host: outlook.office365.com
+IMAP Port: 993
+Encryption: SSL
+IMAP Username: (your Office365 username)
+IMAP Password: (your Office365 password)
+```
+
+#### Amazon SES
+
+Just go to the [docs](https://docs.aws.amazon.com/ses/index.html).
+
+#### Google GSuite | Workspace (why did they rename this? lol)
+
+```bash
+# IMAP
+imap.gmail.com
+Requires SSL: Yes
+Port: 993
+
+# SMTP
+smtp.gmail.com
+Requires SSL: Yes
+Requires TLS: Yes (if available)
+Requires Authentication: Yes (I got this off the website, I use it without auth all the time. You can set it up in Gmail, or in Google Admin Console)
+Port for SSL: 465
+Port for TLS/STARTTLS: 587
+```
