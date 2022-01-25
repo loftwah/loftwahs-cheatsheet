@@ -497,11 +497,106 @@ dig <example.com> ns
 iptables -nvL -t nat
 ```
 
+#### cURL
+
+```bash
+# Download a file and specify a new filename.
+curl http://example.com/file.zip -o new_file.zip
+# Download multiple files.
+curl -O URLOfFirstFile -O URLOfSecondFile
+# Download all sequentially-numbered files (1-24).
+curl http://example.com/pic[1-24].jpg
+# Download a file, following [L]ocation redirects, and automatically [C]ontinuing (resuming) a previous file transfer:
+curl -O -L -C - http://example.com/filename
+# Download a file and follow redirects.
+curl -L http://example.com/file
+# Download a file and pass HTTP Authentication.
+curl -u username:password URL
+# Download a file with a Proxy.
+curl -x proxysever.server.com:PORT http://addressiwantto.access
+# Download a file from FTP.
+curl -u username:password -O ftp://example.com/pub/file.zip
+# Resume a previously failed download.
+curl -C - -o partial_file.zip http://example.com/file.zip
+# Fetch only the HTTP headers from a response.
+curl -I http://example.com
+# Fetch your external IP and network info as JSON.
+curl http://ifconfig.me/all/json
+# Limit the rate of a download.
+curl --limit-rate 1000B -O http://path.to.the/file
+# POST to a form.
+curl -F "name=user" -F "password=test" http://example.com
+# POST JSON Data.
+curl -H "Content-Type: application/json" -X POST -d '{"user":"bob","pass":"123"}' http://example.com
+# Send a request with an extra header, using a custom HTTP method:
+curl -H 'X-My-Header: 123' -X PUT http://example.com
+# Pass a user name and password for server authentication:
+curl -u myusername:mypassword http://example.com
+# Pass client certificate and key for a resource, skipping certificate validation:
+curl --cert client.pem --key key.pem --insecure https://example.com
+
 ##### Nmap
 
-- Check single port on single host - `nmap -p <port> <host/IP>`
-- Intrusive port scan on a single host - `nmap -sS <host/IP>`
-- Top ten port on a single host - `nmap --top-ports 10 <host/IP>`
+```bash
+# Check single port on single host
+nmap -p <port> <host/IP>
+# Intrusive port scan on a single host
+nmap -sS <host/IP>
+# Top ten port on a single host
+nmap --top-ports 10 <host/IP>
+# Scan from a list of targets:
+nmap -iL [list.txt]
+# OS detection:
+nmap -O --osscan_guess [target]
+# Save output to text file:
+nmap -oN [output.txt] [target]
+# Save output to xml file:
+nmap -oX [output.xml] [target]
+# Scan a specific port:
+nmap -p [port] [target]
+# Do an aggressive scan:
+nmap -A [target]
+# Speedup your scan: # -n => disable ReverseDNS # --min-rate=X => min X packets / sec
+nmap -T5 --min-parallelism=50 -n --min-rate=300 [target]
+# Traceroute:
+nmap -traceroute [target]
+# Example: Ping scan all machines on a class C network
+nmap -sP 192.168.0.0/24
+# Force TCP scan: -sT # Force UDP scan: -sU
+# Discover DHCP information on an interface
+nmap --script broadcast-dhcp-discover -e eth0
+## Port Status Information
+- Open: This indicates that an application is listening for connections on this port.
+- Closed: This indicates that the probes were received but there is no application listening on this port.
+- Filtered: This indicates that the probes were not received and the state could not be established. It also indicates that the probes are being dropped by some kind of filtering.
+- Unfiltered: This indicates that the probes were received but a state could not be established.
+- Open/Filtered: This indicates that the port was filtered or open but Nmap couldn’t establish the state.
+- Closed/Filtered: This indicates that the port was filtered or closed but Nmap couldn’t establish the state.
+## Additional Scan Types
+nmap -sn: Probe only (host discovery, not port scan)
+nmap -sS: SYN Scan
+nmap -sT: TCP Connect Scan
+nmap -sU: UDP Scan
+nmap -sV: Version Scan
+nmap -O: Used for OS Detection/fingerprinting
+nmap --scanflags: Sets custom list of TCP using `URG ACK PSH RST SYN FIN` in any order
+### Nmap Scripting Engine Categories
+The most common Nmap scripting engine categories:
+- auth: Utilize credentials or bypass authentication on target hosts.
+- broadcast: Discover hosts not included on command line by broadcasting on local network.
+- brute: Attempt to guess passwords on target systems, for a variety of protocols, including http, SNMP, IAX, MySQL, VNC, etc.
+- default: Scripts run automatically when -sC or -A are used.
+- discovery: Try to learn more information about target hosts through public sources of information, SNMP, directory services, and more.
+- dos: May cause denial of service conditions in target hosts.
+- exploit: Attempt to exploit target systems.
+- external: Interact with third-party systems not included in target list.
+- fuzzer: Send unexpected input in network protocol fields.
+- intrusive: May crash target, consume excessive resources, or otherwise impact target machines in a malicious fashion.
+- malware: Look for signs of malware infection on the target hosts.
+- safe: Designed not to impact target in a negative fashion.
+- version: Measure the version of software or protocols on the target hosts.
+- vul: Measure whether target systems have a known vulnerability.
+```
 
 #### Password generation
 
@@ -549,3 +644,106 @@ awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' your_private_key.pem > output.txt
 - `grc tail -f /var/log/filename`
 
 ## Searching
+
+[GitHub repositories with more than 2500 stars sorted by recently updated](https://github.com/search?o=desc&q=stars%3A%3E2500&s=updated&type=Repositories)
+### Test a WebSocket using cURL
+
+```bash
+curl --include \
+     --no-buffer \
+     --header "Connection: Upgrade" \
+     --header "Upgrade: websocket" \
+     --header "Host: example.com:80" \
+     --header "Origin: http://example.com:80" \
+     --header "Sec-WebSocket-Key: SGVsbG8sIHdvcmxkIQ==" \
+     --header "Sec-WebSocket-Version: 13" \
+     http://example.com:80/
+```
+
+### Minimal safe Bash script template
+
+```bash
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+trap cleanup SIGINT SIGTERM ERR EXIT
+
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+
+usage() {
+  cat <<EOF
+Usage: $(basename "${BASH_SOURCE[0]}") [-h] [-v] [-f] -p param_value arg1 [arg2...]
+Script description here.
+Available options:
+-h, --help      Print this help and exit
+-v, --verbose   Print script debug info
+-f, --flag      Some flag description
+-p, --param     Some param description
+EOF
+  exit
+}
+
+cleanup() {
+  trap - SIGINT SIGTERM ERR EXIT
+  # script cleanup here
+}
+
+setup_colors() {
+  if [[ -t 2 ]] && [[ -z "${NO_COLOR-}" ]] && [[ "${TERM-}" != "dumb" ]]; then
+    NOFORMAT='\033[0m' RED='\033[0;31m' GREEN='\033[0;32m' ORANGE='\033[0;33m' BLUE='\033[0;34m' PURPLE='\033[0;35m' CYAN='\033[0;36m' YELLOW='\033[1;33m'
+  else
+    NOFORMAT='' RED='' GREEN='' ORANGE='' BLUE='' PURPLE='' CYAN='' YELLOW=''
+  fi
+}
+
+msg() {
+  echo >&2 -e "${1-}"
+}
+
+die() {
+  local msg=$1
+  local code=${2-1} # default exit status 1
+  msg "$msg"
+  exit "$code"
+}
+
+parse_params() {
+  # default values of variables set from params
+  flag=0
+  param=''
+
+  while :; do
+    case "${1-}" in
+    -h | --help) usage ;;
+    -v | --verbose) set -x ;;
+    --no-color) NO_COLOR=1 ;;
+    -f | --flag) flag=1 ;; # example flag
+    -p | --param) # example named parameter
+      param="${2-}"
+      shift
+      ;;
+    -?*) die "Unknown option: $1" ;;
+    *) break ;;
+    esac
+    shift
+  done
+
+  args=("$@")
+
+  # check required params and arguments
+  [[ -z "${param-}" ]] && die "Missing required parameter: param"
+  [[ ${#args[@]} -eq 0 ]] && die "Missing script arguments"
+
+  return 0
+}
+
+parse_params "$@"
+setup_colors
+
+# script logic here
+
+msg "${RED}Read parameters:${NOFORMAT}"
+msg "- flag: ${flag}"
+msg "- param: ${param}"
+msg "- arguments: ${args[*]-}"
+```
