@@ -480,3 +480,129 @@ dig <example.com> ns
 ### Cron
 
 [Crontab Guru Examples](https://crontab.guru/examples.html)
+
+**Jenkins**
+
+*   Setup Jenkins on EC2
+
+#!/bin/bash
+sudo yum update -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum install java-1.8.0 -y
+sudo yum install jenkins -y
+sudo service jenkins start
+
+sudo cat
+/var/lib/jenkins/secrets/initialAdminPassword
+
+**Grep**
+
+*   Look through all files in current dir for word “foo” - `grep -R "foo” .`
+*   View last ten lines of output - `grep -i -C 10 "invalid view source” /var/log/info.log`
+*   Display line number of message - `grep -n “pattern” <file>`
+
+**Iptables**
+
+*   Check nat rules for ip redirection - `iptables -nvL -t nat`
+
+**Apache**
+
+*   Turn off “ServerSignature” and “ServerToken” on Apache
+    
+    *   Edit httpd.conf or apache2.conf
+    
+    // Kali, Debian, Ubuntu  Linux Mint
+      sudo vi /etc/apache2/apache2.conf
+    // CentOS, Fedora, RHEL , Arch Linux
+     sudo vi /etc/httpd/conf/httpd.conf
+    
+    *   Add below settings to the file
+    
+       ServerSignature Off
+       ServerTokens Prod
+    
+    *   Restart Apache
+    
+    // Kali, Debian, Ubuntu Linux Mint
+       sudo service apache2 restart
+    //Fedora, CentOS/RHEL 7,Arch Linux
+     systemctl restart httpd.service
+    
+
+**Nginx**
+
+*   Check installed modules - `nginx -V`
+*   Pretty print installed modules - `2>&1 nginx -V | xargs -n1`
+*   Test a configuration without reloading - `nginx -t`
+*   Stop all nginx processes - `nginx -s stop`
+*   Start all nginx processes - `nginx -s start`
+*   Restart all nginx processes - `nginx -s restart`
+*   Realod nginx configuration (without restarting) - `nginx -s reload`
+
+**Tomcat**
+
+*   Hide tomcat stack traces (showReport) as well as the Server info: Add below lines at the HOST section
+    
+    <Valve className="org.apache.catalina.valves.ErrorReportValve"
+    showReport="false"
+    showServerInfo="false" />
+    
+
+*   Injecting HTTP Response with the secure header in Tomcat
+    
+    <filter>
+        <filter-name>httpHeaderSecurity</filter-name>
+        <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+          <param-name>antiClickJackingEnabled</param-name>
+          <param-value>true</param-value>
+        </init-param>
+        <init-param>
+          <param-name>antiClickJackingOption</param-name>
+          <param-value>DENY</param-value>
+        </init-param>
+        </filter>
+        <filter-mapping>
+        <filter-name>httpHeaderSecurity</filter-name>
+        <url-pattern>/\*</url-pattern>
+        </filter-mapping>
+        <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+        </welcome-file-list>
+    
+
+**Nmap**
+
+*   Check single port on single host - `nmap -p <port> <host/IP>`
+*   Intrusive port scan on a single host - `nmap -sS <host/IP>`
+*   Top ten port on a single host - `nmap --top-ports 10 <host/IP>`
+
+**Password generation**
+
+*   Create hash from password - `openssl passwd -crypt <password>`
+*   Generate random 8 character password (Ubuntu) - `makepasswd -count 1 -minchars 8`
+*   Create .passwd file with user and random password - `sudo htpasswd -c /etc/nginx/.htpasswd <user>`
+
+**Removing files**
+
+*   Remove files over 30 days old - `find . -mtime +30 | xargs rm -rf`
+*   Remove files older than 7 day starting with 'backup' - `find . -type f -name "backup*" -mtime +7 -exec rm {} \;`
+
+**SSH**
+
+*   Generate generic ssh key pair - `ssh-keygen -q -t rsa -f ~/.ssh/<name> -N '' -C <name>`
+*   AWS PEM key to ssh PUB key : `ssh-keygen -y -f eliarms.pem > eliarms.pub`
+
+**Tail log with colored output**
+
+*   `grc tail -f /var/log/filename`
+
+**ps**
+
+*   Show process tree of all PIDs - `ps auxwf`
+*   Show all process info and hierarchy (same as above)- `ps -efH`
+*   Show orphaned processes for - `ps -ef|awk '$3=="1" && /pandora/ { print $2 }'`
+*   Show all orphaned processes (could be daemons) - `ps -elf | awk '{if ($5 == 1){print $4" "$5" "$15}}'`
+*   Show zombie processes - `ps aux | grep Z`
