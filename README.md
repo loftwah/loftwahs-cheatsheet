@@ -51,16 +51,18 @@ CyberChef - The Cyber Swiss Army Knife
 *   List the networks `docker network ls`
 *   Copy Docker images from one host to another without using a repository
 
- #Step1 - Save the Docker image as a tar file
- docker save -o <path for generated tar file> <image name> 
- 
- #Example
- docker save -o c:/myfile.tar centos:16
- 
- #Step2 - copy your image to a new system with regular file transfer tools such as cp, scp or rsync(preferred for big files)
- 
- #Step3 - load the image into Docker
- docker load -i <path to image tar file>
+```bash
+#Step1 - Save the Docker image as a tar file
+docker save -o <path for generated tar file> <image name> 
+
+#Example
+docker save -o c:/myfile.tar centos:16
+
+#Step2 - copy your image to a new system with regular file transfer tools such as cp, scp or rsync(preferred for big files)
+
+#Step3 - load the image into Docker
+docker load -i <path to image tar file>
+```
 
 ### Clean up Docker before starting
 
