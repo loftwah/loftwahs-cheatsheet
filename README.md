@@ -542,6 +542,7 @@ curl -H 'X-My-Header: 123' -X PUT http://example.com
 curl -u myusername:mypassword http://example.com
 # Pass client certificate and key for a resource, skipping certificate validation:
 curl --cert client.pem --key key.pem --insecure https://example.com
+```
 
 ##### Nmap
 
