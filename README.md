@@ -57,6 +57,8 @@ docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
 docker volume prune
 ```
 
+Migrate image without registry
+
 ```bash
 #Step1 - Save the Docker image as a tar file
 docker save -o <path for generated tar file> <image name>
