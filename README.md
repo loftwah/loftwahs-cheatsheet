@@ -476,6 +476,8 @@ ssh-keygen -y -f eliarms.pem > eliarms.pub
 
 #### Networking
 
+[Packetlife Cheatsheets](https://packetlife.net/library/cheat-sheets/)
+
 ```bash
 # Check your public IP
 curl http://whatismyip.org/
