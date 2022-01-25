@@ -4,25 +4,18 @@
 
 This is a repo with a bunch of stuff I use regularly.
 
-## Amazon Web Services
+## Links
 
-[ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2)
+[AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [Cloudflare Developers](https://developers.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
+ | [DevDocs.io](https://devdocs.io/) | [PhotoPea](https://photopea.com) | 
+ 
+### Google
 
-## [Canva](https://canva.com)
+| [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1) |
 
-Can’t forget about graphics and design. I like Canva so I use it.
+### [Microsoft 365](https://www.office.com/)
 
-[](https://www.canva.com/)
-
-## [CloudFlare](https://dash.cloudflare.com/)
-
-[Developers](https://developers.cloudflare.com/)
-
-## [CyberChef](https://gchq.github.io/CyberChef/)
-
-CyberChef - The Cyber Swiss Army Knife
-
-## [DevDocs.io](https://devdocs.io/)
+| [Admin Console](https://admin.microsoft.com/Adminportal/Home) | [Outlook](https://outlook.office365.com/mail/inbox) | [Teams](https://teams.microsoft.com/) |
 
 ## Docker
 
@@ -278,10 +271,6 @@ git commit -m "fixed untracked files"
 git push
 ```
 
-## Google
-
-| [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1) |
-
 ## Jenkins
 
 - Setup Jenkins on Amazon Linux 2
@@ -299,29 +288,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ## Linux
 
-### How to install Linux?
-
-We’re going to be using Ubuntu for our example and you can download it here.
-
-[Get Ubuntu Server | Download | Ubuntu](https://ubuntu.com/download/server)
-
-Linux Basics
-
-[An Introduction to Linux Basics | DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics)
-
-### How to set up and use SSH keys?
-
-[How to Set Up SSH Keys on Ubuntu 20.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04)
-
-[How to Create an SSH Shortcut | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut)
-
-### How to set up a self signed certificate with a Custom Root CA
-
-[Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309)
-
-## [Microsoft 365](https://www.office.com/)
-
-| [Admin Console](https://admin.microsoft.com/Adminportal/Home) | [Outlook](https://outlook.office365.com/mail/inbox) | [Teams](https://teams.microsoft.com/) |
+| [Ubuntu Server Download](https://ubuntu.com/download/server) | [Linux Basics](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics) | [Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) | [SSH Shortcut](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut) | [Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309) |
 
 ## Nginx
 
