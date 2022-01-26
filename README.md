@@ -407,7 +407,6 @@ Find and replace whole words in vim
 # Replace all occurrences of string in a directory
 Find and replace string - grep -rl "oldstring" ./ | xargs sed -i "" "s/oldstring/newstring/g"
 # Listing Running Services Under SystemD in Linux
-systemctl list-units --type=service# Listing Running Services Under SystemD in Linux
 systemctl list-units --type=service
 # Sort disk usage by most first
 df -h | tail -n +2 | sort -rk5
