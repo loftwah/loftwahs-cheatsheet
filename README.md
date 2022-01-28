@@ -1113,3 +1113,113 @@ VULTR_SECRET
 ### Awesome (Topic)
 
 | [A11Y](https://github.com/brunopulis/awesome-a11y) | [Agile](https://github.com/lorabv/awesome-agile) | [Authentication](https://github.com/casbin/awesome-auth) | [Automation Scripts](https://github.com/python-geeks/Automation-scripts) | [Argo](https://github.com/terrytangyuan/awesome-argo) | [AWS](https://github.com/donnemartin/awesome-aws) | [Azure Policy](https://github.com/globalbao/awesome-azure-policy) | [Bash](https://github.com/awesome-lists/awesome-bash) | [Books](https://github.com/hackerkid/Mind-Expanding-Books) | [Business Intelligence](https://github.com/thenaturalist/awesome-business-intelligence) | [Chaos Engineering](https://github.com/dastergon/awesome-chaos-engineering) |[Cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) | [CI](https://github.com/ligurio/awesome-ci) | [Cloud Native](https://github.com/rootsongjc/awesome-cloud-native) | [Cloud Security](https://github.com/4ndersonLin/awesome-cloud-security) | [CTO](https://github.com/kuchin/awesome-cto) | [Data Science](https://github.com/academic/awesome-datascience) | [Dataset Tools](https://github.com/jsbroks/awesome-dataset-tools) | [DevOps](https://github.com/wmariuss/awesome-devops) | [DevSecOps](https://github.com/sottlmarek/DevSecOps) | [Discord Communities](https://github.com/mhxion/awesome-discord-communities) | [Docker](https://github.com/veggiemonk/awesome-docker) | [Docker Compose](https://github.com/docker/awesome-compose) | [eBPF](https://github.com/zoidbergwill/awesome-ebpf) | [GitHub Actions](https://github.com/sdras/awesome-actions) | [Golang](https://github.com/avelino/awesome-go) | [GraphQL](https://github.com/chentsulin/awesome-graphql) | [gRPC](https://github.com/grpc-ecosystem/awesome-grpc) | [Guidelines](https://github.com/Kristories/awesome-guidelines) | [Home Kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes) | [JavaScript Mini Projects](https://github.com/thinkswell/javascript-mini-projects) | [json](https://github.com/burningtree/awesome-json) | [k8s Resources](https://github.com/tomhuang12/awesome-k8s-resources) | [Kubernetes](https://github.com/ramitsurana/awesome-kubernetes) | [Linux Containers](https://github.com/Friz-zy/awesome-linux-containers) | [Linux Software](https://github.com/luong-komorebi/Awesome-Linux-Software) | [Leading and managing](https://github.com/LappleApple/awesome-leading-and-managing) | [Naming](https://github.com/gruhn/awesome-naming) | [Network Automation](https://github.com/networktocode/awesome-network-automation) | [Newsletters](https://github.com/zudochkin/awesome-newsletters) | [No login web apps](https://github.com/aviaryan/awesome-no-login-web-apps) | [No/Low Code](https://github.com/kairichard/awesome-nocode-lowcode) | [Nodejs](https://github.com/sindresorhus/awesome-nodejs) | [Nodejs Security](https://github.com/lirantal/awesome-nodejs-security) | [Notebooks](https://github.com/jupyter-naas/awesome-notebooks) | [OSINT](https://github.com/jivoi/awesome-osint) | [PaaS](https://github.com/debarshibasak/awesome-paas) | [Pentest](https://github.com/enaqx/awesome-pentest) | [Personal Security Checklist](https://github.com/Lissy93/personal-security-checklist) | [Privacy](https://github.com/pluja/awesome-privacy) | [Product Design](https://github.com/ttt30ga/awesome-product-design) | [Productivity](https://github.com/jyguyomarch/awesome-productivity) | [Prometheus Alerts](https://github.com/samber/awesome-prometheus-alerts) | [Python](https://github.com/vinta/awesome-python) | [Python Scripts](https://github.com/prathimacode-hub/Awesome_Python_Scripts) | [Raspberry Pi](https://github.com/thibmaek/awesome-raspberry-pi) | [README Template](https://github.com/othneildrew/Best-README-Template) | [REST API](https://github.com/marmelab/awesome-rest) | [Rust](https://github.com/rust-unofficial/awesome-rust) | [SaaS Boilerplates](https://github.com/smirnov-am/awesome-saas-boilerplates) | [Scalability](https://github.com/binhnguyennus/awesome-scalability) | [Security Hardening](https://github.com/decalage2/awesome-security-hardening) | [Self Hosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | [Shell](https://github.com/alebcay/awesome-shell) | [Scripts](https://github.com/codePerfectPlus/awesomeScripts) | [Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture) | [Stacks](https://github.com/ethibox/awesome-stacks) | [Startpage](https://github.com/jnmcfly/awesome-startpage) | [Startup](https://github.com/KrishMunot/awesome-startup) | [Storage](https://github.com/okhosting/awesome-storage) | [Tech Blogs](https://github.com/markodenic/awesome-tech-blogs) | [Technical Writing](https://github.com/BolajiAyodeji/awesome-technical-writing) | [Threat Detection](https://github.com/0x4D31/awesome-threat-detection) | [Tips](https://github.com/jbhuang0604/awesome-tips) | [UUID](https://github.com/grantcarthew/awesome-unique-id) | [VSCode](https://github.com/viatsko/awesome-vscode) | [WP Speed Up](https://github.com/lukecav/awesome-wp-speed-up) |
+
+Google dork cheatsheet
+======================
+
+[](#search-filters)Search filters
+---------------------------------
+
+| Filter | Description | Example |
+| --- | --- | --- |
+| allintext | Searches for occurrences of all the keywords given. | `allintext:"keyword"` |
+| intext | Searches for the occurrences of keywords all at once or one at a time. | `intext:"keyword"` |
+| inurl | Searches for a URL matching one of the keywords. | `inurl:"keyword"` |
+| allinurl | Searches for a URL matching all the keywords in the query. | `allinurl:"keyword"` |
+| intitle | Searches for occurrences of keywords in title all or one. | `intitle:"keyword"` |
+| allintitle | Searches for occurrences of keywords all at a time. | `allintitle:"keyword"` |
+| site | Specifically searches that particular site and lists all the results for that site. | `site:"www.google.com"` |
+| filetype | Searches for a particular filetype mentioned in the query. | `filetype:"pdf"` |
+| link | Searches for external links to pages. | `link:"keyword"` |
+| numrange | Used to locate specific numbers in your searches. | `numrange:321-325` |
+| before/after | Used to search within a particular date range. | `filetype:pdf & (before:2000-01-01 after:2001-01-01)` |
+| allinanchor (and also inanchor) | This shows sites which have the keyterms in links pointing to them, in order of the most links. | `inanchor:rat` |
+| allinpostauthor (and also inpostauthor) | Exclusive to blog search, this one picks out blog posts that are written by specific individuals. | `allinpostauthor:"keyword"` |
+| related | List web pages that are “similar” to a specified web page. | `related:www.google.com` |
+| cache | Shows the version of the web page that Google has in its cache. | `cache:www.google.com` |
+
+[](#examples)Examples
+---------------------
+
+```
+intext:"index of /"
+Nina Simone intitle:”index.of” “parent directory” “size” “last modified” “description” I Put A Spell On You (mp4|mp3|avi|flac|aac|ape|ogg) -inurl:(jsp|php|html|aspx|htm|cf|shtml|lyrics-realm|mp3-collection) -site:.info
+Bill Gates intitle:”index.of” “parent directory” “size” “last modified” “description” Microsoft (pdf|txt|epub|doc|docx) -inurl:(jsp|php|html|aspx|htm|cf|shtml|ebooks|ebook) -site:.info
+parent directory DVDRip -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory MP3 -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory Name of Singer or album -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+filetype:config inurl:web.config inurl:ftp
+“Windows XP Professional” 94FBR
+ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:"budget approved") inurl:confidential
+ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:”budget approved”) inurl:confidential
+
+```
+
+[](#operators)Operators
+-----------------------
+
+#### [](#search-term)Search Term
+
+This operator searches for the exact phrase within speech marks only. This is ideal when the phrase you are using to search is ambiguous and could be easily confused with something else, or when you’re not quite getting relevant enough results back. For example:
+
+```
+"Tinned Sandwiches"
+
+```
+
+#### [](#or)OR
+
+This self explanatory operator searches for a given search term OR an equivalent term.
+
+```
+site:facebook.com | site:twitter.com
+
+```
+
+#### [](#and)AND
+
+```
+site:facebook.com & site:twitter.com
+
+```
+
+#### [](#operators-combinaison)Operators combinaison
+
+```
+(site:facebook.com | site:twitter.com) & intext:"login"
+(site:facebook.com | site:twitter.com) (intext:"login")
+
+```
+
+#### [](#include-results)Include results
+
+This will order results by the number of occurrence of the keyword.
+
+```
+-site:facebook.com +site:facebook.*
+
+```
+
+#### [](#exclude-results)Exclude results
+
+```
+site:facebook.* -site:facebook.com
+
+```
+
+#### [](#synonyms)Synonyms
+
+Adding a tilde to a search word tells Google that you want it to bring backsynonyms for the term as well. For example, entering “~set” will bring back results that include words like “configure”, “collection” and “change” which are all synonyms of “set”. Fun fact: “set” has the most definitions of any word in the dictionary.
+
+```
+~set
+
+```
+
+#### [](#glob-pattern-)Glob pattern (\*)
+
+Putting an asterisk in a search tells Google ‘I don’t know what goes here’. Basically, it’s really good for finding half remembered song lyrics or names of things.
+
+```
+site:*.com
+```
