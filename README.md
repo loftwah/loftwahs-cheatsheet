@@ -290,6 +290,19 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 | [Ubuntu Server Download](https://ubuntu.com/download/server) | [Linux Basics](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics) | [Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) | [SSH Shortcut](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut) | [Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309) |
 
+## Minikube
+
+Install Minikube
+
+```bash
+# Download the latest version of Minikube
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+# Make the binary executable
+chmod +x ./minikube
+# Move the binary to your executable path
+sudo mv ./minikube /usr/local/bin/
+```
+
 ## Nginx
 
 | [Config Tool](https://www.digitalocean.com/community/tools/nginx) | [Nginx Proxy Manager](https://nginxproxymanager.com/setup/) |
