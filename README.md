@@ -271,37 +271,31 @@ git commit -m "fixed untracked files"
 git push
 ```
 
-## Jenkins
+## ArgoCD
 
-- Setup Jenkins on Amazon Linux 2
+How to install ArgoCD
+
+### Install by script
 
 ```bash
-#!/bin/bash
-sudo yum update -y
-sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-sudo yum install java-1.8.0 -y
-sudo yum install jenkins -y
-sudo service jenkins start
-sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```
+
+### Install by helm
+
+- [general parameters](https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd#general-parameters)
+
+```bash
+helm repo add argocd https://argoproj.github.io/argo-cd
+helm install my-release argo/argo-cd
 ```
 
 ## Linux
 
 | [Ubuntu Server Download](https://ubuntu.com/download/server) | [Linux Basics](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics) | [Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) | [SSH Shortcut](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut) | [Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309) |
-
-## Minikube
-
-Install Minikube
-
-```bash
-# Download the latest version of Minikube
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-# Make the binary executable
-chmod +x ./minikube
-# Move the binary to your executable path
-sudo mv ./minikube /usr/local/bin/
-```
 
 ## Nginx
 
