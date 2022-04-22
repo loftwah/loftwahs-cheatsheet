@@ -219,13 +219,6 @@ git config --global user.name "Dean Lofts"
 git config --global user.email "dean@deanlofts.xyz"
 ```
 
-### Clone and work with the [Apptizle.io](http://Apptizle.io) repository (assumes VSCode)
-
-```bash
-git clone https://github.com/loftwah/apptizle.io && cd apptizle.io
-code .
-```
-
 **Git**
 
 - Remove deleted files from repo - `git rm $(git ls-files --deleted)`
