@@ -13,10 +13,6 @@ This is a repo with a bunch of stuff I use regularly.
 
 | [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1) |
 
-### [Microsoft 365](https://www.office.com/)
-
-| [Admin Console](https://admin.microsoft.com/Adminportal/Home) | [Outlook](https://outlook.office365.com/mail/inbox) | [Teams](https://teams.microsoft.com/) |
-
 ## Docker
 
 [Docs](https://docs.docker.com/)
