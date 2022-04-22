@@ -7,8 +7,8 @@ This is a repo with a bunch of stuff I use regularly.
 ## Links
 
 | [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [AWS Guide](https://github.com/open-guides/og-aws) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [Cloudflare Developers](https://developers.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
- | [DevDocs.io](https://devdocs.io/) | [PhotoPea](https://photopea.com) | 
- 
+| [DevDocs.io](https://devdocs.io/) | [PhotoPea](https://photopea.com) |
+
 ### Google
 
 | [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1) |
@@ -350,26 +350,17 @@ cat <filename> | curl -T - https://pipe.apptizle.io/<filename>
 curl https://pipe.apptizle.io/<filename> > <filename>
 ```
 
-## Portainer
-
-[https://docs.portainer.io/v/ce-2.11/start/install/server/docker/linux](https://docs.portainer.io/v/ce-2.11/start/install/server/docker/linux)
-
-### Install Portainer
+## AWS S3
 
 ```bash
-docker volume create portainer_data
-docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
-    --restart=always \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v portainer_data:/data \
-    portainer/portainer-ce:2.11.0
+# List s3 bucket permissions and keys
+aws s3api get-bucket-acl --bucket examples3bucketname
+aws s3api get-object-acl --bucket examples3bucketname --key dir/file.ext
+aws s3api list-objects --bucket examples3bucketname
+aws s3api list-objects-v2 --bucket examples3bucketname
+aws s3api get-object --bucket examples3bucketname --key dir/file.ext localfilename.ext
+aws s3api put-object --bucket examples3bucketname --key dir/file.ext --body localfilename.ext
 ```
-
-### Templates
-
-The following URLs can be used for Templates in Portainer:
-
-[](https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json)
 
 ## Visual Studio Code
 
@@ -628,6 +619,7 @@ awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' your_private_key.pem > output.txt
 ## Searching
 
 [GitHub repositories with more than 2500 stars sorted by recently updated](https://github.com/search?o=desc&q=stars%3A%3E2500&s=updated&type=Repositories)
+
 ### Test a WebSocket using cURL
 
 ```bash
@@ -738,12 +730,12 @@ name: Test
 on:
   push:
     branches:
-    - main
-    - features/**
-    - dependabot/**
+      - main
+      - features/**
+      - dependabot/**
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   docker:
@@ -751,26 +743,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
 
-    - name: Start containers
-      run: docker-compose -f "docker-compose.yml" up -d --build
+      - name: Start containers
+        run: docker-compose -f "docker-compose.yml" up -d --build
 
-    - name: Install node
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14.x
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run tests
-      run: npm run test
+      - name: Run tests
+        run: npm run test
 
-    - name: Stop containers
-      if: always()
-      run: docker-compose -f "docker-compose.yml" down
+      - name: Stop containers
+        if: always()
+        run: docker-compose -f "docker-compose.yml" down
 ```
 
 ### Stack data structure in Bash
@@ -939,30 +931,54 @@ def calculate_aspect(width: int, height: int) -> str:
     y = int(height / r)
 
     return f"{x}:{y}"
-    
+
 calculate_aspect(1920, 1080) # '16:9'
 ```
 
 ### HTML Simple Maintenance Page
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <title>Site Maintenance</title>
 <style>
-  body { text-align: center; padding: 150px; }
-  h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
-  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-  a { color: #dc8100; text-decoration: none; }
-  a:hover { color: #333; text-decoration: none; }
+  body {
+    text-align: center;
+    padding: 150px;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  body {
+    font: 20px Helvetica, sans-serif;
+    color: #333;
+  }
+  article {
+    display: block;
+    text-align: left;
+    width: 650px;
+    margin: 0 auto;
+  }
+  a {
+    color: #dc8100;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #333;
+    text-decoration: none;
+  }
 </style>
 
 <article>
-    <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
-        <p>&mdash; The Team</p>
-    </div>
+  <h1>We&rsquo;ll be back soon!</h1>
+  <div>
+    <p>
+      Sorry for the inconvenience but we&rsquo;re performing some maintenance at
+      the moment. If you need to you can always
+      <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online
+      shortly!
+    </p>
+    <p>&mdash; The Team</p>
+  </div>
 </article>
 ```
 
@@ -1121,32 +1137,29 @@ VULTR_SECRET
 
 | [A11Y](https://github.com/brunopulis/awesome-a11y) | [Agile](https://github.com/lorabv/awesome-agile) | [Authentication](https://github.com/casbin/awesome-auth) | [Automation Scripts](https://github.com/python-geeks/Automation-scripts) | [Argo](https://github.com/terrytangyuan/awesome-argo) | [AWS](https://github.com/donnemartin/awesome-aws) | [Azure Policy](https://github.com/globalbao/awesome-azure-policy) | [Bash](https://github.com/awesome-lists/awesome-bash) | [Books](https://github.com/hackerkid/Mind-Expanding-Books) | [Business Intelligence](https://github.com/thenaturalist/awesome-business-intelligence) | [Chaos Engineering](https://github.com/dastergon/awesome-chaos-engineering) |[Cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) | [CI](https://github.com/ligurio/awesome-ci) | [Cloud Native](https://github.com/rootsongjc/awesome-cloud-native) | [Cloud Security](https://github.com/4ndersonLin/awesome-cloud-security) | [CTO](https://github.com/kuchin/awesome-cto) | [Data Science](https://github.com/academic/awesome-datascience) | [Dataset Tools](https://github.com/jsbroks/awesome-dataset-tools) | [DevOps](https://github.com/wmariuss/awesome-devops) | [DevSecOps](https://github.com/sottlmarek/DevSecOps) | [Discord Communities](https://github.com/mhxion/awesome-discord-communities) | [Docker](https://github.com/veggiemonk/awesome-docker) | [Docker Compose](https://github.com/docker/awesome-compose) | [eBPF](https://github.com/zoidbergwill/awesome-ebpf) | [GitHub Actions](https://github.com/sdras/awesome-actions) | [Golang](https://github.com/avelino/awesome-go) | [GraphQL](https://github.com/chentsulin/awesome-graphql) | [gRPC](https://github.com/grpc-ecosystem/awesome-grpc) | [Guidelines](https://github.com/Kristories/awesome-guidelines) | [Home Kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes) | [JavaScript Mini Projects](https://github.com/thinkswell/javascript-mini-projects) | [json](https://github.com/burningtree/awesome-json) | [k8s Resources](https://github.com/tomhuang12/awesome-k8s-resources) | [Kubernetes](https://github.com/ramitsurana/awesome-kubernetes) | [Linux Containers](https://github.com/Friz-zy/awesome-linux-containers) | [Linux Software](https://github.com/luong-komorebi/Awesome-Linux-Software) | [Leading and managing](https://github.com/LappleApple/awesome-leading-and-managing) | [Naming](https://github.com/gruhn/awesome-naming) | [Network Automation](https://github.com/networktocode/awesome-network-automation) | [Newsletters](https://github.com/zudochkin/awesome-newsletters) | [No login web apps](https://github.com/aviaryan/awesome-no-login-web-apps) | [No/Low Code](https://github.com/kairichard/awesome-nocode-lowcode) | [Nodejs](https://github.com/sindresorhus/awesome-nodejs) | [Nodejs Security](https://github.com/lirantal/awesome-nodejs-security) | [Notebooks](https://github.com/jupyter-naas/awesome-notebooks) | [OSINT](https://github.com/jivoi/awesome-osint) | [PaaS](https://github.com/debarshibasak/awesome-paas) | [Pentest](https://github.com/enaqx/awesome-pentest) | [Personal Security Checklist](https://github.com/Lissy93/personal-security-checklist) | [Privacy](https://github.com/pluja/awesome-privacy) | [Product Design](https://github.com/ttt30ga/awesome-product-design) | [Productivity](https://github.com/jyguyomarch/awesome-productivity) | [Prometheus Alerts](https://github.com/samber/awesome-prometheus-alerts) | [Python](https://github.com/vinta/awesome-python) | [Python Scripts](https://github.com/prathimacode-hub/Awesome_Python_Scripts) | [Raspberry Pi](https://github.com/thibmaek/awesome-raspberry-pi) | [README Template](https://github.com/othneildrew/Best-README-Template) | [REST API](https://github.com/marmelab/awesome-rest) | [Rust](https://github.com/rust-unofficial/awesome-rust) | [SaaS Boilerplates](https://github.com/smirnov-am/awesome-saas-boilerplates) | [Scalability](https://github.com/binhnguyennus/awesome-scalability) | [Security Hardening](https://github.com/decalage2/awesome-security-hardening) | [Self Hosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | [Shell](https://github.com/alebcay/awesome-shell) | [Scripts](https://github.com/codePerfectPlus/awesomeScripts) | [Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture) | [Stacks](https://github.com/ethibox/awesome-stacks) | [Startpage](https://github.com/jnmcfly/awesome-startpage) | [Startup](https://github.com/KrishMunot/awesome-startup) | [Storage](https://github.com/okhosting/awesome-storage) | [Tech Blogs](https://github.com/markodenic/awesome-tech-blogs) | [Technical Writing](https://github.com/BolajiAyodeji/awesome-technical-writing) | [Threat Detection](https://github.com/0x4D31/awesome-threat-detection) | [Tips](https://github.com/jbhuang0604/awesome-tips) | [UUID](https://github.com/grantcarthew/awesome-unique-id) | [VSCode](https://github.com/viatsko/awesome-vscode) | [WP Speed Up](https://github.com/lukecav/awesome-wp-speed-up) |
 
-Google dork cheatsheet
-======================
+# Google dork cheatsheet
 
-[](#search-filters)Search filters
----------------------------------
+## [](#search-filters)Search filters
 
-| Filter | Description | Example |
-| --- | --- | --- |
-| allintext | Searches for occurrences of all the keywords given. | `allintext:"keyword"` |
-| intext | Searches for the occurrences of keywords all at once or one at a time. | `intext:"keyword"` |
-| inurl | Searches for a URL matching one of the keywords. | `inurl:"keyword"` |
-| allinurl | Searches for a URL matching all the keywords in the query. | `allinurl:"keyword"` |
-| intitle | Searches for occurrences of keywords in title all or one. | `intitle:"keyword"` |
-| allintitle | Searches for occurrences of keywords all at a time. | `allintitle:"keyword"` |
-| site | Specifically searches that particular site and lists all the results for that site. | `site:"www.google.com"` |
-| filetype | Searches for a particular filetype mentioned in the query. | `filetype:"pdf"` |
-| link | Searches for external links to pages. | `link:"keyword"` |
-| numrange | Used to locate specific numbers in your searches. | `numrange:321-325` |
-| before/after | Used to search within a particular date range. | `filetype:pdf & (before:2000-01-01 after:2001-01-01)` |
-| allinanchor (and also inanchor) | This shows sites which have the keyterms in links pointing to them, in order of the most links. | `inanchor:rat` |
-| allinpostauthor (and also inpostauthor) | Exclusive to blog search, this one picks out blog posts that are written by specific individuals. | `allinpostauthor:"keyword"` |
-| related | List web pages that are “similar” to a specified web page. | `related:www.google.com` |
-| cache | Shows the version of the web page that Google has in its cache. | `cache:www.google.com` |
+| Filter                                  | Description                                                                                       | Example                                               |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| allintext                               | Searches for occurrences of all the keywords given.                                               | `allintext:"keyword"`                                 |
+| intext                                  | Searches for the occurrences of keywords all at once or one at a time.                            | `intext:"keyword"`                                    |
+| inurl                                   | Searches for a URL matching one of the keywords.                                                  | `inurl:"keyword"`                                     |
+| allinurl                                | Searches for a URL matching all the keywords in the query.                                        | `allinurl:"keyword"`                                  |
+| intitle                                 | Searches for occurrences of keywords in title all or one.                                         | `intitle:"keyword"`                                   |
+| allintitle                              | Searches for occurrences of keywords all at a time.                                               | `allintitle:"keyword"`                                |
+| site                                    | Specifically searches that particular site and lists all the results for that site.               | `site:"www.google.com"`                               |
+| filetype                                | Searches for a particular filetype mentioned in the query.                                        | `filetype:"pdf"`                                      |
+| link                                    | Searches for external links to pages.                                                             | `link:"keyword"`                                      |
+| numrange                                | Used to locate specific numbers in your searches.                                                 | `numrange:321-325`                                    |
+| before/after                            | Used to search within a particular date range.                                                    | `filetype:pdf & (before:2000-01-01 after:2001-01-01)` |
+| allinanchor (and also inanchor)         | This shows sites which have the keyterms in links pointing to them, in order of the most links.   | `inanchor:rat`                                        |
+| allinpostauthor (and also inpostauthor) | Exclusive to blog search, this one picks out blog posts that are written by specific individuals. | `allinpostauthor:"keyword"`                           |
+| related                                 | List web pages that are “similar” to a specified web page.                                        | `related:www.google.com`                              |
+| cache                                   | Shows the version of the web page that Google has in its cache.                                   | `cache:www.google.com`                                |
 
-[](#examples)Examples
----------------------
+## [](#examples)Examples
 
 ```
 intext:"index of /"
@@ -1162,8 +1175,7 @@ ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (inte
 
 ```
 
-[](#operators)Operators
------------------------
+## [](#operators)Operators
 
 #### [](#search-term)Search Term
 
