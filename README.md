@@ -264,7 +264,7 @@ git push
 
 You can automatically sign your commits with a `gpg` key giving you a `verified` badge on your GitHub commits.
 
-````baash
+```bash
 # Generate a key
 gpg --gen-key
 # See your gpg public key:
@@ -289,7 +289,7 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
-````
+```
 
 ### Install by helm
 
