@@ -78,7 +78,7 @@ sudo yum update -y
 sudo amazon-linux-extras install docker -y
 sudo service docker start
 sudo systemctl enable docker
-sudo usermod -a -G docker ec2-user
+sudo usermod -aG docker ec2-user
 ```
 
 ### Install Docker on Ubuntu
@@ -88,7 +88,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 sudo service docker start
 sudo systemctl enable docker
-sudo usermod -a -G docker <username>
+sudo usermod -aG docker <username>
 ```
 
 ### Install Docker-Compose
