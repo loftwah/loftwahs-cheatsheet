@@ -6,8 +6,8 @@ This is a repo with a bunch of stuff I use regularly.
 
 ## Links
 
-| [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [AWS Guide](https://github.com/open-guides/og-aws) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [Cloudflare Developers](https://developers.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
-| [DevDocs.io](https://devdocs.io/) | [PhotoPea](https://photopea.com) |
+| [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [AWS Guide](https://github.com/open-guides/og-aws) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) |[CyberChef](https://gchq.github.io/CyberChef/)
+|
 
 ### Google
 
@@ -202,7 +202,7 @@ docker-compose -v
 - Dockerizing a simple nodeJs app
 
 ```dockerfile
-FROM node:4.6
+FROM node:latest
 WORKDIR /app
 ADD ./app
 RUN npm install
@@ -260,6 +260,24 @@ git commit -m "fixed untracked files"
 git push
 ```
 
+#### Generate and auto-sign your commits with GPG
+
+You can automatically sign your commits with a `gpg` key giving you a `verified` badge on your GitHub commits.
+
+````baash
+# Generate a key
+gpg --gen-key
+# See your gpg public key:
+gpg --armor --export YOUR_KEY_ID
+# YOUR_KEY_ID is the hash in front of `sec` in previous command. (for example sec 4096R/234FAA343232333 => key id is: 234FAA343232333)
+# Set a gpg key for git:
+git config --global user.signingkey your_key_id
+# To sign a single commit:
+git commit -S -a -m "Test a signed commit"
+# Auto-sign all commits globaly
+git config --global commit.gpgsign true
+```
+
 ## ArgoCD
 
 How to install ArgoCD
@@ -271,7 +289,7 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
-```
+````
 
 ### Install by helm
 
@@ -285,6 +303,37 @@ helm install my-release argo/argo-cd
 ## Linux
 
 | [Ubuntu Server Download](https://ubuntu.com/download/server) | [Linux Basics](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics) | [Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) | [SSH Shortcut](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut) | [Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309) |
+
+I like to install a few appliocations on top of Linux with my own custom configuration.
+
+### Linuxbrew
+
+Install Linuxbrew by following these instructions:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### zsh
+
+Install zsh by following these instructions:
+
+```bash
+sudo apt install zsh -y
+sudo chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install fonts-powerline -y
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+You need to update the `~/.zshrc` file to add the plugins. If you're using a file stored somewhere else create a link to the file in your home directory with `ln -s /dotfiles/.zshrc ~/.zshrc`. This will create a symlink to the file so you can store it in a `Git` repository.
+
+plugins=(
+git
+zsh-autosuggestions
+zsh-syntax-highlighting
+)
 
 ## Nginx
 
