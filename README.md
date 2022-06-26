@@ -280,7 +280,19 @@ git commit -S -a -m "Test a signed commit"
 git config --global commit.gpgsign true
 ```
 
-## ArgoCD
+## Kubernetes
+
+Kubernetes is a containerization platform that allows you to run applications on a cluster of machines
+
+### Kompose
+
+Install Kompose with the following
+
+```bash
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.1/kompose-linux-amd64 -o kompose
+```
+
+### ArgoCD
 
 How to install ArgoCD
 
