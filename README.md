@@ -133,7 +133,7 @@ sudo apt-get -y install docker-ce
 sudo systemctl enable docker
 sudo systemctl start docker
 # add current user to the docker group to avoid using sudo when running docker
-sudo usermod -a -G docker $USER
+sudo usermod -aG docker $USER
  # Output current version
 docker -v
 ```
@@ -158,7 +158,7 @@ sudo yum install docker-ce
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 # add current user to the docker group to avoid using sudo when running docker
-sudo usermod -a -G docker $(whoami)
+sudo usermod -aG docker $(whoami)
 # Output current version
 docker -v
 ```
@@ -178,8 +178,8 @@ sudo amazon-linux-extras install docker -y
 # Enable & start docker
 sudo service docker start
 # add current user to the docker group to avoid using sudo when running docker
-#sudo usermod -a -G docker ec2-user
-sudo usermod -a -G docker $(whoami)
+#sudo usermod -aG docker ec2-user
+sudo usermod -aG docker $(whoami)
 # Output current version
  docker -v
 ```
@@ -201,7 +201,7 @@ docker-compose -v
 
 **Dockerfile**
 
-- Dockerizing a simple nodeJs app
+- Dockerizing a simple NodeJs app
 
 ```dockerfile
 FROM node:latest
