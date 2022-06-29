@@ -270,7 +270,7 @@ git push
 
 #### Generate and auto-sign your commits with GPG
 
-You can automatically sign your commits with a `gpg` key giving you a `verified` badge on your GitHub commits.
+You can automatically sign your commits with a `gpg` key giving you a `verified` badge on your GitHub commits. Make sure you don't set a passphrase for your `gpg` key. I couldn't work out how to get `git` to work well with a passphrase on the `gpg` key.
 
 ```bash
 # Generate a key
