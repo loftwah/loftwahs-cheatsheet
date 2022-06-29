@@ -207,7 +207,7 @@ sudo apt-get install docker-compose-plugin
 
 ### Dockerfile
 
-- Dockerizing a simple NodeJs app
+- Dockerizing a simple NodeJS app
 
 ```dockerfile
 FROM node:latest
