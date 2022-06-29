@@ -184,8 +184,6 @@ sudo usermod -aG docker $(whoami)
  docker -v
 ```
 
-**Docker Compose**
-
 - Shell Script to Install the latest version of docker-compose
 
 ```bash
@@ -199,7 +197,15 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose -v
 ```
 
-**Dockerfile**
+There is now a plugin version available for `Docker Compose`, which adds aome ambiguity because it removes the `-` from the command.
+
+For the `apt` package manager installing the plugin looks something like this.
+
+```bash
+sudo apt-get install docker-compose-plugin
+```
+
+### Dockerfile
 
 - Dockerizing a simple NodeJs app
 
@@ -214,14 +220,14 @@ CMD npm start
 
 ## Git and GitHub
 
+Git is a version control system for tracking changes in files and coordinating work among multiple people. GitHub is a web-based Git repository hosting service.
+
 ### Initial Git configuration
 
 ```bash
 git config --global user.name "Dean Lofts"
 git config --global user.email "dean@deanlofts.xyz"
 ```
-
-**Git**
 
 - Remove deleted files from repo - `git rm $(git ls-files --deleted)`
 - Reset git repo (dangerous) - `git reset --hard HEAD`
@@ -279,6 +285,8 @@ git commit -S -a -m "Test a signed commit"
 # Auto-sign all commits globaly
 git config --global commit.gpgsign true
 ```
+
+Be sure to actually add your key to your `GitHub` account, I always forget this part because it involves actually opening my browser and I haven't figured out a better way to do it yet.
 
 ## Kubernetes
 
@@ -343,11 +351,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 You need to update the `~/.zshrc` file to add the plugins. If you're using a file stored somewhere else create a link to the file in your home directory with `ln -s /dotfiles/.zshrc ~/.zshrc`. This will create a symlink to the file so you can store it in a `Git` repository.
 
+```bash
 plugins=(
 git
 zsh-autosuggestions
 zsh-syntax-highlighting
 )
+```
 
 ## Nginx
 
