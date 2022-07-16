@@ -91,6 +91,8 @@ sudo systemctl enable docker
 sudo usermod -aG docker <username>
 ```
 
+A reboot was required for this to work on Fedora.
+
 ### Install Docker-Compose
 
 Note: use `bash` for this one, with `zsh` I get a parse error and I don't know why yet.
