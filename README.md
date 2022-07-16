@@ -81,7 +81,7 @@ sudo systemctl enable docker
 sudo usermod -aG docker ec2-user
 ```
 
-### Install Docker on Ubuntu
+### Install Docker on Linux
 
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
