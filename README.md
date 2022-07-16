@@ -268,6 +268,17 @@ git commit -m "fixed untracked files"
 git push
 ```
 
+#### Generate SSH Keys
+
+Generate an SSH key with the following:
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "dean@deanlofts.xyz"
+cat ~/.ssh/id_rsa.pub
+```
+
+Put your SSH key into GitHub if you intend to use it this way.
+
 #### Generate and auto-sign your commits with GPG
 
 You can automatically sign your commits with a `gpg` key giving you a `verified` badge on your GitHub commits. Make sure you don't set a passphrase for your `gpg` key. I couldn't work out how to get `git` to work well with a passphrase on the `gpg` key.
