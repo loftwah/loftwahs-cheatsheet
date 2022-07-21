@@ -2,20 +2,26 @@
 
 ![LOFTWAH'S](https://user-images.githubusercontent.com/19922556/150899356-b3930a05-6b65-43c4-a492-f5b7e5f94b39.png)
 
-This is a repo with a bunch of stuff I use regularly.
+This is a repo with a bunch of stuff I use regularly. If you would like to know a little bit more about me please visit my [website](https://lofts.sh).
 
 ## Links
+
+The links section here is for my own use. If you would like to customize it please make your own fork and update this section as your own.
 
 | [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [AWS Guide](https://github.com/open-guides/og-aws) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
 |
 
 ### Google
 
+I use Google Workspace for a lot of my work.
+
 | [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1) |
 
 ## Docker
 
 [Docs](https://docs.docker.com/)
+
+Docker is a containerization platform that provides a simple way to build, deploy, and manage software containers. Docker containers are isolated from each other and from the host operating system.
 
 ```bash
 # To start the docker daemon:
@@ -46,7 +52,7 @@ docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
 docker volume prune
 ```
 
-Migrate image without registry
+### How to migrate a Docker image without registry
 
 ```bash
 #Step1 - Save the Docker image as a tar file
