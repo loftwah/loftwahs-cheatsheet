@@ -2231,3 +2231,45 @@ Script to inject an exit(0) syscall into a running process. NB: only x86_64 for 
 ```bash
 gdb -p "$1" -batch -ex 'set {short}$rip = 0x050f' -ex 'set $rax=231' -ex 'set $rdi=0' -ex 'cont'
 ```
+
+### Run an ad-hoc web server
+
+Each of these commands will run an ad hoc http static server in your current (or specified) directory, available at [http://localhost:8000](http://localhost:8000) Use this power wisely.
+
+Python
+
+```bash
+python -m http.server 8000
+```
+
+Ruby
+
+```bash
+ruby -run -ehttpd . -p8000
+```
+
+Node.js
+
+```bash
+npm install -g http-server 
+http-server -p 8000
+```
+
+Or
+
+```bash
+npm install -g node-static
+static -p 8000
+```
+
+PHP
+
+```bash
+php -S 127.0.0.1:8000
+```
+
+Busybox
+
+```bash
+busybox httpd -f -p 8000
+```
