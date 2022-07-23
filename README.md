@@ -1121,6 +1121,69 @@ curl -s https://api.github.com/repos/jgm/pandoc/releases/latest \
 | wget -qi -
 ```
 
+### Upload URL to Google Drive
+
+```javascript
+function uploadFiles(url) {
+  var response =  UrlFetchApp.fetch(url)
+  var fileName  = getFilenameFromURL(url)
+  var folder = DriveApp.getFolderById('1IxMiswEfi67ovoBf8ZH1RV7qVPx1Ks6l');
+  var blob = response.getBlob();
+  var file = folder.createFile(blob)
+  file.setName(fileName)
+  file.setDescription("Download from the " + url)
+  return file.getUrl();
+}
+
+function getFilenameFromURL(url) {
+  //(host-ish)/(path-ish/)(filename)
+  var re = /^https?:\/\/([^\/]+)\/([^?]*\/)?([^\/?]+)/;
+  var match = re.exec(url);
+  if (match) {
+    return unescape(match[3]);
+  }
+  return null;
+}
+
+function doGet(e){
+var html  =  HtmlService.createHtmlOutputFromFile('index.html')
+return html.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+}
+
+/*create index.html on the Google app project and put the below code and remove this comment*/
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <title>Upload Files</title>
+  </head>
+  <body>
+    <h1>Upload files to Google drive from URL</h1>
+    <form>
+      <label>Enter the URL</label>
+      <input type="text" name="myFile" id="url" style="height:5%; width:70%">
+      <br>
+      <br>
+      <input type="button" id="submitBtn" value="Upload Files">
+      <label id="resp"><label>
+    </form>
+    <script>
+      document.getElementById('submitBtn').addEventListener('click',
+      function(e){
+        var url= document.getElementById("url").value;
+        google.script.run.withSuccessHandler(onSuccess).uploadFiles(url)
+      
+      })
+      
+      function onSuccess(url){
+        document.getElementById('resp').innerHTML = "File uploaded to path" + url;
+      }
+    </script>
+  </body>
+</html>
+```
+
 ### SMTP Settings for common providers
 
 #### Microsoft 365
@@ -1177,7 +1240,6 @@ AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY
 AMAZON_AWS_ACCESS_KEY_ID
 AMAZON_AWS_SECRET_ACCESS_KEY
-
 # Azure
 AZURE_CLIENT_ID
 AZURE_CLIENT_SECRET
@@ -1185,81 +1247,43 @@ AZURE_USERNAME
 AZURE_PASSWORD
 MSI_ENDPOINT
 MSI_SECRET
-
 # DigitalOcean
 DIGITALOCEAN_ACCESS_TOKEN
-
 # Dockerhub
 DOCKERHUB_PASSWORD
-
 # Facebook
 FACEBOOK_APP_ID
 FACEBOOK_APP_SECRET
 FACEBOOK_ACCESS_TOKEN
-
 # GitHub
 GH_TOKEN
 GITHUB_TOKEN
 GH_ENTERPRISE_TOKEN
 GITHUB_ENTERPRISE_TOKEN
-
 # Google Cloud
 GOOGLE_APPLICATION_CREDENTIALS
 GOOGLE_API_KEY
-
-# Gitlab
-CI_DEPLOY_USER
-CI_DEPLOY_PASSWORD
-GITLAB_USER_LOGIN
-CI_JOB_JWT
-CI_JOB_JWT_V2
-CI_JOB_TOKEN
-
 # Mailgun
 MAILGUN_API_KEY
-
 # MongoDB
 MCLI_PRIVATE_API_KEY
 MCLI_PUBLIC_API_KEY
-
 # NPM
 NPM_TOKEN
-
-# Sentry
-SENTRY_AUTH_TOKEN
-
 # Slack
 SLACK_TOKEN
-
 # Square
-square_access_token
-square_oauth_secret
-
+SQUARE_ACCESS_TOKEN
+SQUARE_OAUTH_TOKEN
 # Stripe
 STRIPE_API_KEY
 STRIPE_DEVICE_NAME
-
 # Twilio
 TWILIO_ACCOUNT_SID
 TWILIO_AUTH_TOKEN
-
 # Twitter
 CONSUMER_KEY
 CONSUMER_SECRET
-
-# Travis CI
-TRAVIS_SUDO
-TRAVIS_OS_NAME
-TRAVIS_SECURE_ENV_VARS
-
-# HashiCorp Vault
-VAULT_TOKEN
-VAULT_CLIENT_KEY
-
-# Vultr
-TOKEN
-VULTR_ACCESS
-VULTR_SECRET
 ```
 
 ### Awesome (Topic)
