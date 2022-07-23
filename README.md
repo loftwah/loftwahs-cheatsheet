@@ -2294,3 +2294,25 @@ Notes
 1 us = 10^-6 seconds = 1,000 ns
 1 ms = 10^-3 seconds = 1,000 us = 1,000,000 ns
 ```
+
+## Convert an HTML table into a CSV file with Python and BeautifulSoup
+
+```python
+import csv
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+html = urlopen("http://en.wikipedia.org/wiki/"
+               "Comparison_of_text_editors")
+soup = BeautifulSoup(html, "html.parser")
+table = soup.findAll("table", {"class":"wikitable"})[0]
+rows = table.findAll("tr")
+
+with open("editors.csv", "wt+", newline="") as f:
+    writer = csv.writer(f)
+    for row in rows:
+        csv_row = []
+        for cell in row.findAll(["td", "th"]):
+            csv_row.append(cell.get_text())
+        writer.writerow(csv_row)
+```
