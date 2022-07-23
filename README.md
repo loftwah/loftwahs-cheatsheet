@@ -2223,3 +2223,11 @@ If you'd like to have "" instead of "''", you may edit the python script, but I 
 ```bash
 sed "s#\"''\"#\"\"#"
 ```
+
+### Kill a process and make it look like an accident
+
+Script to inject an exit(0) syscall into a running process. NB: only x86_64 for now!
+
+```bash
+gdb -p "$1" -batch -ex 'set {short}$rip = 0x050f' -ex 'set $rax=231' -ex 'set $rdi=0' -ex 'cont'
+```
