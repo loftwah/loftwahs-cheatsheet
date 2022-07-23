@@ -1184,6 +1184,69 @@ return html.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
 </html>
 ```
 
+### HTTPS certificate for localhost
+
+This focuses on generating the certificates for loading local virtual hosts hosted on your computer, for development only.
+
+### Create a Certificate authority (CA)
+
+Generate `RootCA.pem`, `RootCA.key` & `RootCA.crt`:
+
+```bash
+openssl req -x509 -nodes -new -sha256 -days 1024 -newkey rsa:2048 -keyout RootCA.key -out RootCA.pem -subj "/C=US/CN=Example-Root-CA"
+openssl x509 -outform pem -in RootCA.pem -out RootCA.crt
+```
+
+- Note that `Example-Root-CA` is an example, you can customize the name.
+
+### Domain name certificate
+
+Let's say you have two domains `loftwah1.local` and `loftwah2.local` that are hosted on your local machine
+for development (using the `hosts` file to point them to `127.0.0.1`).
+
+First, create a file `domains.ext` that lists all your local domains:
+
+```bash
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = localhost
+DNS.2 = loftwah1.local
+DNS.3 = loftwah2.local
+```
+
+Generate `localhost.key`, `localhost.csr`, and `localhost.crt`:
+
+```bash
+openssl req -new -nodes -newkey rsa:2048 -keyout localhost.key -out localhost.csr -subj "/C=US/ST=YourState/L=YourCity/O=Example-Certificates/CN=localhost.local"
+openssl x509 -req -sha256 -days 1024 -in localhost.csr -CA RootCA.pem -CAkey RootCA.key -CAcreateserial -extfile domains.ext -out localhost.crt
+```
+
+Note that the country / state / city / name in the first command  can be customized.
+
+You will need to configure it with your webserver. Click [here](http://nginx.org/en/docs/http/configuring_https_servers.html) for instructions on configuring Nginx.
+
+### Trust the local CA
+
+At this point, the site would load with a warning about self-signed certificates.
+In order to get a green lock, your new local CA has to be added to the trusted Root Certificate Authorities.
+
+#### Windows: Chrome, & Edge
+
+- Windows recognizes `.crt` files, so you can right-click on `RootCA.crt` > `Install` to open the import dialog.
+- Make sure to select "Trusted Root Certification Authorities" and confirm.
+- You should now get a green lock in Chrome, and Edge.
+
+#### Windows: Firefox
+
+- There are two ways to get the CA trusted in Firefox.
+- The simplest is to make Firefox use the Windows trusted Root CAs by going to `about:config`,
+and setting `security.enterprise_roots.enabled` to `true`.
+- The other way is to import the certificate by going
+to `about:preferences#privacy` > `Certificats` > `Import` > `RootCA.pem` > `Confirm for websites`.
+
 ### SMTP Settings for common providers
 
 #### Microsoft 365
