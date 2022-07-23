@@ -2173,3 +2173,53 @@ Greetings! {Very helpful|Very useful} advice {within this|in this particular} {a
 I {simply|just} {could not|couldn't} {leave|depart|go away} your {site|web site|website} {prior to|before} suggesting that I {really|extremely|actually} {enjoyed|loved} {the standard|the usual} {information|info} {a person|an individual} {supply|provide} {for your|on your|in your|to your} {visitors|guests}? Is {going to|gonna} be {back|again} {frequently|regularly|incessantly|steadily|ceaselessly|often|continuously} {in order to|to} {check up on|check out|inspect|investigate cross-check} new posts|
 {I wanted|I needed|I want to|I need to} to thank you for this {great|excellent|fantastic|wonderful|good|very good} read!! I {definitely|certainly|absolutely} {enjoyed|loved} every {little bit of|bit of} it. {I have|I've got|I have got} you {bookmarked|book marked|book-marked|saved as a favorite} {to check out|to look at} new {stuff you|things you} post�\
 ```
+
+### Dump ENV variables to JSON using Python
+
+```python
+#!/usr/bin/env python
+import json
+import sys
+
+try:
+    dotenv = sys.argv[1]
+except IndexError as e:
+    dotenv = '.env'
+
+with open(dotenv, 'r') as f:
+    content = f.readlines()
+
+# removes whitespace chars like '\n' at the end of each line
+content = [x.strip().split('=') for x in content if '=' in x]
+print(json.dumps(dict(content)))
+```
+
+.env:
+
+```bash
+SOME_ENV_VAR_DEBUG=True
+SOME_EMPTY_VALUE=''
+```
+
+Usage combined with jq
+
+```bash
+python env-to-json.py | jq
+```
+
+output:
+
+```json
+{
+  "SOME_ENV_VAR_DEBUG": "True",
+  "SOME_EMPTY_VALUE": "''"
+}
+```
+
+The script should be improved with more validity checks or maybe loading env variables somehow instead of splitting on =. Could add usage help, etc.
+
+If you'd like to have "" instead of "''", you may edit the python script, but I personally used sed:
+
+```bash
+sed "s#\"''\"#\"\"#"
+```
