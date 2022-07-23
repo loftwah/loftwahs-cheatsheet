@@ -1604,9 +1604,9 @@ CONSUMER_SECRET
 
 | [A11Y](https://github.com/brunopulis/awesome-a11y) | [Agile](https://github.com/lorabv/awesome-agile) | [Authentication](https://github.com/casbin/awesome-auth) | [Automation Scripts](https://github.com/python-geeks/Automation-scripts) | [Argo](https://github.com/terrytangyuan/awesome-argo) | [AWS](https://github.com/donnemartin/awesome-aws) | [Azure Policy](https://github.com/globalbao/awesome-azure-policy) | [Bash](https://github.com/awesome-lists/awesome-bash) | [Books](https://github.com/hackerkid/Mind-Expanding-Books) | [Business Intelligence](https://github.com/thenaturalist/awesome-business-intelligence) | [Chaos Engineering](https://github.com/dastergon/awesome-chaos-engineering) |[Cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) | [CI](https://github.com/ligurio/awesome-ci) | [Cloud Native](https://github.com/rootsongjc/awesome-cloud-native) | [Cloud Security](https://github.com/4ndersonLin/awesome-cloud-security) | [CTO](https://github.com/kuchin/awesome-cto) | [Data Science](https://github.com/academic/awesome-datascience) | [Dataset Tools](https://github.com/jsbroks/awesome-dataset-tools) | [DevOps](https://github.com/wmariuss/awesome-devops) | [DevSecOps](https://github.com/sottlmarek/DevSecOps) | [Discord Communities](https://github.com/mhxion/awesome-discord-communities) | [Docker](https://github.com/veggiemonk/awesome-docker) | [Docker Compose](https://github.com/docker/awesome-compose) | [eBPF](https://github.com/zoidbergwill/awesome-ebpf) | [GitHub Actions](https://github.com/sdras/awesome-actions) | [Golang](https://github.com/avelino/awesome-go) | [GraphQL](https://github.com/chentsulin/awesome-graphql) | [gRPC](https://github.com/grpc-ecosystem/awesome-grpc) | [Guidelines](https://github.com/Kristories/awesome-guidelines) | [Home Kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes) | [JavaScript Mini Projects](https://github.com/thinkswell/javascript-mini-projects) | [json](https://github.com/burningtree/awesome-json) | [k8s Resources](https://github.com/tomhuang12/awesome-k8s-resources) | [Kubernetes](https://github.com/ramitsurana/awesome-kubernetes) | [Linux Containers](https://github.com/Friz-zy/awesome-linux-containers) | [Linux Software](https://github.com/luong-komorebi/Awesome-Linux-Software) | [Leading and managing](https://github.com/LappleApple/awesome-leading-and-managing) | [Naming](https://github.com/gruhn/awesome-naming) | [Network Automation](https://github.com/networktocode/awesome-network-automation) | [Newsletters](https://github.com/zudochkin/awesome-newsletters) | [No login web apps](https://github.com/aviaryan/awesome-no-login-web-apps) | [No/Low Code](https://github.com/kairichard/awesome-nocode-lowcode) | [Nodejs](https://github.com/sindresorhus/awesome-nodejs) | [Nodejs Security](https://github.com/lirantal/awesome-nodejs-security) | [Notebooks](https://github.com/jupyter-naas/awesome-notebooks) | [OSINT](https://github.com/jivoi/awesome-osint) | [PaaS](https://github.com/debarshibasak/awesome-paas) | [Pentest](https://github.com/enaqx/awesome-pentest) | [Personal Security Checklist](https://github.com/Lissy93/personal-security-checklist) | [Privacy](https://github.com/pluja/awesome-privacy) | [Product Design](https://github.com/ttt30ga/awesome-product-design) | [Productivity](https://github.com/jyguyomarch/awesome-productivity) | [Prometheus Alerts](https://github.com/samber/awesome-prometheus-alerts) | [Python](https://github.com/vinta/awesome-python) | [Python Scripts](https://github.com/prathimacode-hub/Awesome_Python_Scripts) | [Raspberry Pi](https://github.com/thibmaek/awesome-raspberry-pi) | [README Template](https://github.com/othneildrew/Best-README-Template) | [REST API](https://github.com/marmelab/awesome-rest) | [Rust](https://github.com/rust-unofficial/awesome-rust) | [SaaS Boilerplates](https://github.com/smirnov-am/awesome-saas-boilerplates) | [Scalability](https://github.com/binhnguyennus/awesome-scalability) | [Security Hardening](https://github.com/decalage2/awesome-security-hardening) | [Self Hosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | [Shell](https://github.com/alebcay/awesome-shell) | [Scripts](https://github.com/codePerfectPlus/awesomeScripts) | [Software Architecture](https://github.com/mehdihadeli/awesome-software-architecture) | [Stacks](https://github.com/ethibox/awesome-stacks) | [Startpage](https://github.com/jnmcfly/awesome-startpage) | [Startup](https://github.com/KrishMunot/awesome-startup) | [Storage](https://github.com/okhosting/awesome-storage) | [Tech Blogs](https://github.com/markodenic/awesome-tech-blogs) | [Technical Writing](https://github.com/BolajiAyodeji/awesome-technical-writing) | [Threat Detection](https://github.com/0x4D31/awesome-threat-detection) | [Tips](https://github.com/jbhuang0604/awesome-tips) | [UUID](https://github.com/grantcarthew/awesome-unique-id) | [VSCode](https://github.com/viatsko/awesome-vscode) | [WP Speed Up](https://github.com/lukecav/awesome-wp-speed-up) |
 
-# Google dork cheatsheet
+## Google dork cheatsheet
 
-## [](#search-filters)Search filters
+### Search filters
 
 | Filter                                  | Description                                                                                       | Example                                               |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
@@ -1626,9 +1626,9 @@ CONSUMER_SECRET
 | related                                 | List web pages that are “similar” to a specified web page.                                        | `related:www.google.com`                              |
 | cache                                   | Shows the version of the web page that Google has in its cache.                                   | `cache:www.google.com`                                |
 
-## [](#examples)Examples
+### Examples
 
-```
+```bash
 intext:"index of /"
 Nina Simone intitle:”index.of” “parent directory” “size” “last modified” “description” I Put A Spell On You (mp4|mp3|avi|flac|aac|ape|ogg) -inurl:(jsp|php|html|aspx|htm|cf|shtml|lyrics-realm|mp3-collection) -site:.info
 Bill Gates intitle:”index.of” “parent directory” “size” “last modified” “description” Microsoft (pdf|txt|epub|doc|docx) -inurl:(jsp|php|html|aspx|htm|cf|shtml|ebooks|ebook) -site:.info
@@ -1639,88 +1639,80 @@ filetype:config inurl:web.config inurl:ftp
 “Windows XP Professional” 94FBR
 ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:"budget approved") inurl:confidential
 ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:”budget approved”) inurl:confidential
-
 ```
 
-## [](#operators)Operators
+### Operators
 
-#### [](#search-term)Search Term
+#### Search Term
 
 This operator searches for the exact phrase within speech marks only. This is ideal when the phrase you are using to search is ambiguous and could be easily confused with something else, or when you’re not quite getting relevant enough results back. For example:
 
-```
+```bash
 "Tinned Sandwiches"
-
 ```
 
-#### [](#or)OR
+#### OR
 
 This self explanatory operator searches for a given search term OR an equivalent term.
 
-```
+```bash
 site:facebook.com | site:twitter.com
-
 ```
 
-#### [](#and)AND
+#### AND
 
-```
+```bash
 site:facebook.com & site:twitter.com
-
 ```
 
-#### [](#operators-combinaison)Operators combinaison
+#### Operators combinaison
 
-```
+```bash
 (site:facebook.com | site:twitter.com) & intext:"login"
 (site:facebook.com | site:twitter.com) (intext:"login")
-
 ```
 
-#### [](#include-results)Include results
+#### Include results
 
 This will order results by the number of occurrence of the keyword.
 
-```
+```bash
 -site:facebook.com +site:facebook.*
-
 ```
 
-#### [](#exclude-results)Exclude results
+#### Exclude results
 
-```
+```bash
 site:facebook.* -site:facebook.com
-
 ```
 
-#### [](#synonyms)Synonyms
+#### Synonyms
 
 Adding a tilde to a search word tells Google that you want it to bring backsynonyms for the term as well. For example, entering “~set” will bring back results that include words like “configure”, “collection” and “change” which are all synonyms of “set”. Fun fact: “set” has the most definitions of any word in the dictionary.
 
-```
+```bash
 ~set
-
 ```
 
-#### [](#glob-pattern-)Glob pattern (\*)
+#### Glob pattern (\*)
 
 Putting an asterisk in a search tells Google ‘I don’t know what goes here’. Basically, it’s really good for finding half remembered song lyrics or names of things.
 
-```
+```bash
 site:*.com
 ```
 
-### MySQL Cheat Sheet
+## MySQL Cheat Sheet
 
 > Help with SQL commands to interact with a MySQL database
 
-#### MySQL Locations
+### MySQL Locations
 
 * Mac             */usr/local/mysql/bin*
 * Windows         */Program Files/MySQL/MySQL _version_/bin*
 * Xampp           */xampp/mysql/bin*
 
-#### Add mysql to your PATH
+### Add mysql to your PATH
 
 ```bash
 # Current Session
@@ -1731,80 +1723,80 @@ echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile
 
 On [Windows](https://www.qualitestgroup.com/resources/knowledge-center/how-to-guide/add-mysql-path-windows/)
 
-#### Login
+### Login
 
 ```bash
 mysql -u root -p
 ```
 
-#### Show Users
+### Show Users
 
 ```sql
 SELECT User, Host FROM mysql.user;
 ```
 
-#### Create User
+### Create User
 
 ```sql
 CREATE USER 'someuser'@'localhost' IDENTIFIED BY 'somepassword';
 ```
 
-#### Grant All Priveleges On All Databases
+### Grant All Priveleges On All Databases
 
 ```sql
 GRANT ALL PRIVILEGES ON * . * TO 'someuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-#### Show Grants
+### Show Grants
 
 ```sql
 SHOW GRANTS FOR 'someuser'@'localhost';
 ```
 
-#### Remove Grants
+### Remove Grants
 
 ```sql
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'someuser'@'localhost';
 ```
 
-#### Delete User
+### Delete User
 
 ```sql
 DROP USER 'someuser'@'localhost';
 ```
 
-#### Exit
+### Exit
 
 ```sql
 exit;
 ```
 
-#### Show Databases
+### Show Databases
 
 ```sql
 SHOW DATABASES
 ```
 
-#### Create Database
+### Create Database
 
 ```sql
 CREATE DATABASE acme;
 ```
 
-#### Delete Database
+### Delete Database
 
 ```sql
 DROP DATABASE acme;
 ```
 
-#### Select Database
+### Select Database
 
 ```sql
 USE acme;
 ```
 
-#### Create Table
+### Create Table
 
 ```sql
 CREATE TABLE users(
@@ -1821,99 +1813,99 @@ id INT AUTO_INCREMENT,
 );
 ```
 
-#### Delete / Drop Table
+### Delete / Drop Table
 
 ```sql
 DROP TABLE tablename;
 ```
 
-#### Show Tables
+### Show Tables
 
 ```sql
 SHOW TABLES;
 ```
 
-#### Insert Row / Record
+### Insert Row / Record
 
 ```sql
-INSERT INTO users (first_name, last_name, email, password, location, dept, is_admin, register_date) values ('Brad', 'Traversy', 'brad@gmail.com', '123456','Massachusetts', 'development', 1, now());
+INSERT INTO users (first_name, last_name, email, password, location, dept, is_admin, register_date) values ('Dean', 'Lofts', 'dean@deanlofts.xyz', '123456','Victoria', 'development', 1, now());
 ```
 
-#### Insert Multiple Rows
+### Insert Multiple Rows
 
 ```sql
-INSERT INTO users (first_name, last_name, email, password, location, dept,  is_admin, register_date) values ('Fred', 'Smith', 'fred@gmail.com', '123456', 'New York', 'design', 0, now()), ('Sara', 'Watson', 'sara@gmail.com', '123456', 'New York', 'design', 0, now()),('Will', 'Jackson', 'will@yahoo.com', '123456', 'Rhode Island', 'development', 1, now()),('Paula', 'Johnson', 'paula@yahoo.com', '123456', 'Massachusetts', 'sales', 0, now()),('Tom', 'Spears', 'tom@yahoo.com', '123456', 'Massachusetts', 'sales', 0, now());
+INSERT INTO users (first_name, last_name, email, password, location, dept,  is_admin, register_date) values ('Fred', 'Smith', 'fred@gmail.com', '123456', 'Melbourne', 'design', 0, now()), ('Sara', 'Watson', 'sara@gmail.com', '123456', 'Melbourne', 'design', 0, now()),('Will', 'Jackson', 'will@yahoo.com', '123456', 'Sydney', 'development', 1, now()),('Paula', 'Johnson', 'paula@yahoo.com', '123456', 'Perth', 'sales', 0, now()),('Tom', 'Spears', 'tom@yahoo.com', '123456', 'Perth', 'sales', 0, now());
 ```
 
-#### Select
+### Select
 
 ```sql
 SELECT * FROM users;
 SELECT first_name, last_name FROM users;
 ```
 
-#### Where Clause
+### Where Clause
 
 ```sql
-SELECT * FROM users WHERE location='Massachusetts';
-SELECT * FROM users WHERE location='Massachusetts' AND dept='sales';
+SELECT * FROM users WHERE location='Perth';
+SELECT * FROM users WHERE location='Perth' AND dept='sales';
 SELECT * FROM users WHERE is_admin = 1;
 SELECT * FROM users WHERE is_admin > 0;
 ```
 
-#### Delete Row
+### Delete Row
 
 ```sql
 DELETE FROM users WHERE id = 6;
 ```
 
-#### Update Row
+### Update Row
 
 ```sql
 UPDATE users SET email = 'freddy@gmail.com' WHERE id = 2;
 
 ```
 
-#### Add New Column
+### Add New Column
 
 ```sql
 ALTER TABLE users ADD age VARCHAR(3);
 ```
 
-#### Modify Column
+### Modify Column
 
 ```sql
 ALTER TABLE users MODIFY COLUMN age INT(3);
 ```
 
-#### Order By (Sort)
+### Order By (Sort)
 
 ```sql
 SELECT * FROM users ORDER BY last_name ASC;
 SELECT * FROM users ORDER BY last_name DESC;
 ```
 
-#### Concatenate Columns
+### Concatenate Columns
 
 ```sql
 SELECT CONCAT(first_name, ' ', last_name) AS 'Name', dept FROM users;
 
 ```
 
-#### Select Distinct Rows
+### Select Distinct Rows
 
 ```sql
 SELECT DISTINCT location FROM users;
 
 ```
 
-#### Between (Select Range)
+### Between (Select Range)
 
 ```sql
 SELECT * FROM users WHERE age BETWEEN 20 AND 25;
 ```
 
-#### Like (Searching)
+### Like (Searching)
 
 ```sql
 SELECT * FROM users WHERE dept LIKE 'd%';
@@ -1922,26 +1914,26 @@ SELECT * FROM users WHERE dept LIKE '%t';
 SELECT * FROM users WHERE dept LIKE '%e%';
 ```
 
-#### Not Like
+### Not Like
 
 ```sql
 SELECT * FROM users WHERE dept NOT LIKE 'd%';
 ```
 
-#### IN
+### IN
 
 ```sql
 SELECT * FROM users WHERE dept IN ('design', 'sales');
 ```
 
-#### Create & Remove Index
+### Create & Remove Index
 
 ```sql
 CREATE INDEX LIndex On users(location);
 DROP INDEX LIndex ON users;
 ```
 
-#### New Table With Foreign Key (Posts)
+### New Table With Foreign Key (Posts)
 
 ```sql
 CREATE TABLE posts(
@@ -1955,13 +1947,13 @@ id INT AUTO_INCREMENT,
 );
 ```
 
-#### Add Data to Posts Table
+### Add Data to Posts Table
 
 ```sql
 INSERT INTO posts(user_id, title, body) VALUES (1, 'Post One', 'This is post one'),(3, 'Post Two', 'This is post two'),(1, 'Post Three', 'This is post three'),(2, 'Post Four', 'This is post four'),(5, 'Post Five', 'This is post five'),(4, 'Post Six', 'This is post six'),(2, 'Post Seven', 'This is post seven'),(1, 'Post Eight', 'This is post eight'),(3, 'Post Nine', 'This is post none'),(4, 'Post Ten', 'This is post ten');
 ```
 
-#### INNER JOIN
+### INNER JOIN
 
 ```sql
 SELECT
@@ -1975,7 +1967,7 @@ ON users.id = posts.user_id
 ORDER BY posts.title;
 ```
 
-#### New Table With 2 Foriegn Keys
+### New Table With 2 Foriegn Keys
 
 ```sql
 CREATE TABLE comments(
@@ -1990,13 +1982,13 @@ CREATE TABLE comments(
 );
 ```
 
-#### Add Data to Comments Table
+### Add Data to Comments Table
 
 ```sql
 INSERT INTO comments(post_id, user_id, body) VALUES (1, 3, 'This is comment one'),(2, 1, 'This is comment two'),(5, 3, 'This is comment three'),(2, 4, 'This is comment four'),(1, 2, 'This is comment five'),(3, 1, 'This is comment six'),(3, 2, 'This is comment six'),(5, 4, 'This is comment seven'),(2, 3, 'This is comment seven');
 ```
 
-#### Left Join
+### Left Join
 
 ```sql
 SELECT
@@ -2008,7 +2000,7 @@ ORDER BY posts.title;
 
 ```
 
-#### Join Multiple Tables
+### Join Multiple Tables
 
 ```sql
 SELECT
@@ -2023,7 +2015,7 @@ ORDER BY posts.title;
 
 ```
 
-#### Aggregate Functions
+### Aggregate Functions
 
 ```sql
 SELECT COUNT(id) FROM users;
@@ -2034,7 +2026,7 @@ SELECT UCASE(first_name), LCASE(last_name) FROM users;
 
 ```
 
-#### Group By
+### Group By
 
 ```sql
 SELECT age, COUNT(age) FROM users GROUP BY age;
@@ -2043,7 +2035,7 @@ SELECT age, COUNT(age) FROM users GROUP BY age HAVING count(age) >=2;
 
 ```
 
-### Spam Template
+## Spam Template
 
 This is a template from a spammer to give you an idea of what could be expected from a spammer.
 
@@ -2224,7 +2216,7 @@ If you'd like to have "" instead of "''", you may edit the python script, but I 
 sed "s#\"''\"#\"\"#"
 ```
 
-### Kill a process and make it look like an accident
+## Kill a process and make it look like an accident
 
 Script to inject an exit(0) syscall into a running process. NB: only x86_64 for now!
 
@@ -2232,7 +2224,7 @@ Script to inject an exit(0) syscall into a running process. NB: only x86_64 for 
 gdb -p "$1" -batch -ex 'set {short}$rip = 0x050f' -ex 'set $rax=231' -ex 'set $rdi=0' -ex 'cont'
 ```
 
-### Run an ad-hoc web server
+## Run an ad-hoc web server
 
 Each of these commands will run an ad hoc http static server in your current (or specified) directory, available at [http://localhost:8000](http://localhost:8000) Use this power wisely.
 
