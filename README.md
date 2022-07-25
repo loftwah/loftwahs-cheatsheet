@@ -2,20 +2,19 @@
 
 ![LOFTWAH'S](https://user-images.githubusercontent.com/19922556/150899356-b3930a05-6b65-43c4-a492-f5b7e5f94b39.png)
 
-This is a repo with a bunch of stuff I use regularly. If you would like to know a little bit more about me please visit my [website](https://lofts.sh).
+This is a repo with a bunch of stuff I use regularly. If you would like to know a little bit more about me please visit my [Website](https://lofts.sh), [My Video Portfolio](https://www.youtube.com/playlist?list=PLgr1VpT986yP4I9bKEWWWssKL2ajRubPM), [My Portfolio for Web Design and Development](https://lofts.sh/my-portfolio-web/) or my [Resume](https://lofts.sh/resume/).
 
 ## Links
 
 The links section here is for my own use. If you would like to customize it please make your own fork and update this section as your own.
 
-| [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [AWS Guide](https://github.com/open-guides/og-aws) | [Canva](https://canva.com) | [CloudFlare](https://dash.cloudflare.com/) | [CyberChef](https://gchq.github.io/CyberChef/)
-|
+[All Cybercrime IP Feeds](https://iplists.firehol.org/) | [Amazing Developers on YouTube](https://github.com/ErikCH/DevYouTubeList) | [APIs Guru](https://apis.guru/) | [APT & Cybercriminals Campaign Collection](https://github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections) |  [AWS ap-southeast-2](https://ap-southeast-2.console.aws.amazon.com/console/home?region=ap-southeast-2) | [AWS Guide](https://github.com/open-guides/og-aws) | [Canva](https://canva.com) | [Certificate Transparency Subdomains](https://github.com/internetwache/CT_subdomains) | [cheat.sh](https://cht.sh/) | [CloudFlare](https://dash.cloudflare.com/) | [ColorHub](https://colorhub.vercel.app/select-palette) | [CyberChef](https://gchq.github.io/CyberChef/) | [Data Center Server Rack Wiki](https://community.fs.com/blog/different-types-of-server-rack-used-in-data-center.html) | [Default Credentials Cheat Sheet](https://github.com/ihebski/DefaultCreds-cheat-sheet) | [DevOps Ninja](https://github.com/eliarms/devops-ninja) | [Zero Trust to the Endpoint](https://f.hubspotusercontent00.net/hubfs/5411606/Content/The%20CISO%E2%80%99s%20Guide%20to%20Extending%20Zero%20Trust%20to%20the%20Endpoint.pdf) | [ExtendsClass](https://extendsclass.com/) | [free-for.dev](https://free-for.dev/#/) | [HackTricks](https://book.hacktricks.xyz/welcome/readme) | [How Git Branches Work](https://www.freecodecamp.org/news/how-git-branches-work/) | [ISO/IEC 11801 - cabling](https://en.wikipedia.org/wiki/ISO/IEC_11801) | [Linux Command Library One-liners](https://linuxcommandlibrary.com/basic/oneliners.html) | [Most Common Domain Prefix/Suffix List](https://gist.github.com/erikig/826f49442929e9ecfab6d7c481870700) | [Post Compromize Active Directory Checklist](https://www.pwndefend.com/2021/09/15/post-compromise-active-directory-checklist/) | [SPFToolbox](https://spftoolbox.com/) | [theme.park](https://theme-park.dev/) | [Ultimate Guide to Becoming a DevOps Engineer](https://www.contino.io/insights/devops-engineer-guide) | [WordPress Code Reference](https://developer.wordpress.org/reference/) | [WordPress Query Comprehensive Reference](https://luetkemj.github.io/wp-query-ref/)
 
 ### Google
 
 I use Google Workspace for a lot of my work.
 
-| [Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1) |
+[Admin Console](https://admin.google.com/ac/home?hl=en) | [Cloud Platform](https://console.cloud.google.com/home/dashboard) | [Drive](https://drive.google.com/drive/u/0/) | [Gmail](https://mail.google.com/) | [Sheets](https://sheets.google.com/) | [How Search Works](https://www.google.com/search/howsearchworks/?fg=1)
 
 ## Docker
 
@@ -357,6 +356,8 @@ Be sure to actually add your key to your `GitHub` account, I always forget this 
 
 ## Kubernetes
 
+[docs](https://kubernetes.io/docs/home/)
+
 Kubernetes is a containerization platform that allows you to run applications on a cluster of machines
 
 ### Kompose
@@ -368,6 +369,8 @@ curl -L https://github.com/kubernetes/kompose/releases/download/v1.26.1/kompose-
 ```
 
 ### ArgoCD
+
+[docs](https://argo-cd.readthedocs.io/en/stable/)
 
 How to install ArgoCD
 
@@ -391,7 +394,7 @@ helm install my-release argo/argo-cd
 
 ## Linux
 
-| [Ubuntu Server Download](https://ubuntu.com/download/server) | [Linux Basics](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics) | [Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) | [SSH Shortcut](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut) | [Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309) |
+| [Ubuntu Server Download](https://ubuntu.com/download/server) | [Linux Basics](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics) | [Scripts and Snippets](https://lofts.sh/scripts-and-snippets-you-should-use/) | [Set Up SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) | [SSH Shortcut](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut) | [Self Signed Certificate with Custom Root CA](https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309) |
 
 I like to install a few appliocations on top of Linux with my own custom configuration.
 
