@@ -87,7 +87,7 @@
       - [Include results](#include-results)
       - [Exclude results](#exclude-results)
       - [Synonyms](#synonyms)
-      - [Glob pattern (\*)](#glob-pattern-%5C)
+      - [Glob pattern (\*)](#glob-pattern-)
   - [MySQL Cheat Sheet](#mysql-cheat-sheet)
     - [MySQL Locations](#mysql-locations)
     - [Add mysql to your PATH](#add-mysql-to-your-path)
@@ -156,6 +156,9 @@
 ![LOFTWAH'S](https://user-images.githubusercontent.com/19922556/150899356-b3930a05-6b65-43c4-a492-f5b7e5f94b39.png)
 
 This is a repo with a bunch of stuff I use regularly. If you would like to know a little bit more about me please visit my [Website](https://lofts.sh), [My Video Portfolio](https://www.youtube.com/playlist?list=PLgr1VpT986yP4I9bKEWWWssKL2ajRubPM), [My Portfolio for Web Design and Development](https://lofts.sh/my-portfolio-web/) or my [Resume](https://lofts.sh/resume/).
+
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ## Links
 
