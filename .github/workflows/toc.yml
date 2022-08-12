@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: technote-space/toc-generator@v4
         with:
-          TARGET_PATHS: '*.md ./**/*.md'
+          TARGET_PATHS: '*.md'
