@@ -87,7 +87,7 @@
       - [Include results](#include-results)
       - [Exclude results](#exclude-results)
       - [Synonyms](#synonyms)
-      - [Glob pattern (\*)](#glob-pattern-)
+      - [Glob pattern (\*)](#glob-pattern-%5C)
   - [MySQL Cheat Sheet](#mysql-cheat-sheet)
     - [MySQL Locations](#mysql-locations)
     - [Add mysql to your PATH](#add-mysql-to-your-path)
