@@ -47,16 +47,16 @@
       - [Openssl](#openssl)
       - [Tail log with colored output](#tail-log-with-colored-output)
   - [Searching](#searching)
-    - [Test a WebSocket using cURL](#test-a-websocket-using-curl)
-    - [Minimal safe Bash script template](#minimal-safe-bash-script-template)
-    - [Docker-Compose in GitHub Action](#docker-compose-in-github-action)
-    - [Stack data structure in Bash](#stack-data-structure-in-bash)
-    - [HTTPS Request with Node.js and TypeScript](#https-request-with-nodejs-and-typescript)
-    - [Python function to calculate aspect ratio of an image](#python-function-to-calculate-aspect-ratio-of-an-image)
-    - [HTML Simple Maintenance Page](#html-simple-maintenance-page)
-    - [Download the latest release from GitHub](#download-the-latest-release-from-github)
-    - [Upload URL to Google Drive](#upload-url-to-google-drive)
-    - [HTTPS certificate for localhost](#https-certificate-for-localhost)
+  - [Test a WebSocket using cURL](#test-a-websocket-using-curl)
+  - [Minimal safe Bash script template](#minimal-safe-bash-script-template)
+  - [Docker-Compose in GitHub Action](#docker-compose-in-github-action)
+  - [Stack data structure in Bash](#stack-data-structure-in-bash)
+  - [HTTPS Request with Node.js and TypeScript](#https-request-with-nodejs-and-typescript)
+  - [Python function to calculate aspect ratio of an image](#python-function-to-calculate-aspect-ratio-of-an-image)
+  - [HTML Simple Maintenance Page](#html-simple-maintenance-page)
+  - [Download the latest release from GitHub](#download-the-latest-release-from-github)
+  - [Upload URL to Google Drive](#upload-url-to-google-drive)
+  - [HTTPS certificate for localhost](#https-certificate-for-localhost)
     - [Create a Certificate authority (CA)](#create-a-certificate-authority-ca)
     - [Domain name certificate](#domain-name-certificate)
     - [Trust the local CA](#trust-the-local-ca)
@@ -70,7 +70,7 @@
       - [Stronger settings for A+](#stronger-settings-for-a)
         - [Trusted certificate](#trusted-certificate)
       - [SSL](#ssl)
-    - [SMTP Settings for common providers](#smtp-settings-for-common-providers)
+  - [SMTP Settings for common providers](#smtp-settings-for-common-providers)
       - [Microsoft 365](#microsoft-365)
       - [Amazon SES](#amazon-ses)
       - [Google GSuite | Workspace (why did they rename this? lol)](#google-gsuite--workspace-why-did-they-rename-this-lol)
@@ -88,7 +88,7 @@
       - [Include results](#include-results)
       - [Exclude results](#exclude-results)
       - [Synonyms](#synonyms)
-      - [Glob pattern (\*)](#glob-pattern-%5C)
+      - [Glob pattern (\*)](#glob-pattern-)
   - [MySQL Cheat Sheet](#mysql-cheat-sheet)
     - [MySQL Locations](#mysql-locations)
     - [Add mysql to your PATH](#add-mysql-to-your-path)
@@ -133,22 +133,22 @@
     - [Aggregate Functions](#aggregate-functions)
     - [Group By](#group-by)
   - [Spam Template](#spam-template)
-    - [Dump ENV variables to JSON using Python](#dump-env-variables-to-json-using-python)
+  - [Dump ENV variables to JSON using Python](#dump-env-variables-to-json-using-python)
   - [Kill a process and make it look like an accident](#kill-a-process-and-make-it-look-like-an-accident)
   - [Run an ad-hoc web server](#run-an-ad-hoc-web-server)
     - [Simple Python web server that logs requests](#simple-python-web-server-that-logs-requests)
   - [Latency comparison](#latency-comparison)
   - [Convert an HTML table into a CSV file with Python and BeautifulSoup](#convert-an-html-table-into-a-csv-file-with-python-and-beautifulsoup)
   - [CSS units](#css-units)
-  - [Relative units](#relative-units)
-  - [Absolute units](#absolute-units)
-  - [Viewport units](#viewport-units)
-  - [Contexts](#contexts)
-    - [Document-level](#document-level)
-    - [Borders](#borders)
-    - [Font-size](#font-size)
-    - [Padding and margin](#padding-and-margin)
-    - [Media queries](#media-queries)
+    - [Relative units](#relative-units)
+    - [Absolute units](#absolute-units)
+    - [Viewport units](#viewport-units)
+    - [Contexts](#contexts)
+      - [Document-level](#document-level)
+      - [Borders](#borders)
+      - [Font-size](#font-size)
+      - [Padding and margin](#padding-and-margin)
+      - [Media queries](#media-queries)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -919,7 +919,7 @@ awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' your_private_key.pem > output.txt
 
 [GitHub repositories with more than 2500 stars sorted by recently updated](https://github.com/search?o=desc&q=stars%3A%3E2500&s=updated&type=Repositories)
 
-### Test a WebSocket using cURL
+## Test a WebSocket using cURL
 
 ```bash
 curl --include \
@@ -933,7 +933,7 @@ curl --include \
      http://example.com:80/
 ```
 
-### Minimal safe Bash script template
+## Minimal safe Bash script template
 
 ```bash
 #!/usr/bin/env bash
@@ -1021,7 +1021,7 @@ msg "- param: ${param}"
 msg "- arguments: ${args[*]-}"
 ```
 
-### Docker-Compose in GitHub Action
+## Docker-Compose in GitHub Action
 
 ```yaml
 name: Test
@@ -1064,7 +1064,7 @@ jobs:
         run: docker-compose -f "docker-compose.yml" down
 ```
 
-### Stack data structure in Bash
+## Stack data structure in Bash
 
 ```bash
 class Stack {
@@ -1152,7 +1152,7 @@ stack.size()
 stack.isEmpty()
 ```
 
-### HTTPS Request with Node.js and TypeScript
+## HTTPS Request with Node.js and TypeScript
 
 ```bash
 import https, { RequestOptions } from 'https';
@@ -1217,7 +1217,7 @@ export default async function httpRequest<T = Buffer | any>(
 }
 ```
 
-### Python function to calculate aspect ratio of an image
+## Python function to calculate aspect ratio of an image
 
 ```python
 def calculate_aspect(width: int, height: int) -> str:
@@ -1234,7 +1234,7 @@ def calculate_aspect(width: int, height: int) -> str:
 calculate_aspect(1920, 1080) # '16:9'
 ```
 
-### HTML Simple Maintenance Page
+## HTML Simple Maintenance Page
 
 ```html
 <!DOCTYPE html>
@@ -1281,7 +1281,7 @@ calculate_aspect(1920, 1080) # '16:9'
 </article>
 ```
 
-### Download the latest release from GitHub
+## Download the latest release from GitHub
 
 ```bash
 curl -s https://api.github.com/repos/jgm/pandoc/releases/latest \
@@ -1291,7 +1291,7 @@ curl -s https://api.github.com/repos/jgm/pandoc/releases/latest \
 | wget -qi -
 ```
 
-### Upload URL to Google Drive
+## Upload URL to Google Drive
 
 ```javascript
 function uploadFiles(url) {
@@ -1354,7 +1354,7 @@ return html.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
 </html>
 ```
 
-### HTTPS certificate for localhost
+## HTTPS certificate for localhost
 
 This focuses on generating the certificates for loading local virtual hosts hosted on your computer, for development only.
 
@@ -1668,7 +1668,7 @@ Now **restart Nginx**, and test the domain again with SSL Labs using `https://ww
 
 it should now be rated `A+`.
 
-### SMTP Settings for common providers
+## SMTP Settings for common providers
 
 #### Microsoft 365
 
@@ -2340,7 +2340,7 @@ I {simply|just} {could not|couldn't} {leave|depart|go away} your {site|web site|
 {I wanted|I needed|I want to|I need to} to thank you for this {great|excellent|fantastic|wonderful|good|very good} read!! I {definitely|certainly|absolutely} {enjoyed|loved} every {little bit of|bit of} it. {I have|I've got|I have got} you {bookmarked|book marked|book-marked|saved as a favorite} {to check out|to look at} new {stuff you|things you} post�\
 ```
 
-### Dump ENV variables to JSON using Python
+## Dump ENV variables to JSON using Python
 
 ```python
 #!/usr/bin/env python
@@ -2553,7 +2553,7 @@ Recommendations of unit types per media type:
 | Screen | em, rem, % | px | ch, ex, vw, vh, vmin, vmax | cm, mm, in, pt, pc |
 | Print | em, rem, % | cm, mm, in, pt, pc | ch, ex | px, vw, vh, vmin, vmax |
 
-## Relative units
+### Relative units
 
 [Relative units](http://www.w3.org/TR/css3-values/#font-relative-lengths)
 play nicely with both screen and print media types and should be
@@ -2567,7 +2567,7 @@ the most frequently used CSS units.
 | [ch](http://www.w3.org/TR/css3-values/#ch-unit) | relative to width of the "0" (ZERO, U+0030) glyph in the element's font |
 | [ex](http://www.w3.org/TR/css3-values/#ex-unit) | relative to x-height of the font |
 
-## Absolute units
+### Absolute units
 
 Physical units (e.g. cm, mm, in, pc, and pt)
 should only be used for print style sheets,
@@ -2588,7 +2588,7 @@ on the screen.
 | pt | point | | | `1/72in` | `1/12pc` | `1pt` | `4/3px` |
 | px | pixel | | | `1/96in` | `1/16pc` | `3/4pt` | `1px` |
 
-## Viewport units
+### Viewport units
 
 [Viewport-percentage length units](http://www.w3.org/TR/css3-values/#viewport-relative-lengths)
 should be used with caution, as there is still some
@@ -2601,9 +2601,9 @@ should be used with caution, as there is still some
 | [vmin](http://www.w3.org/TR/css3-values/#vmin-unit) | relative to 1% of viewport's smaller dimension |
 | [vmax](http://www.w3.org/TR/css3-values/#vmax-unit) | relative to 1% of viewport's larger dimension |
 
-## Contexts
+### Contexts
 
-### Document-level
+#### Document-level
 
 Assume the root font size is `16px` but don't require it to be so. Either declare the font size as `100%` or don't declare the `font-size` property at all.
 
@@ -2613,7 +2613,7 @@ html {
 }
 ```
 
-### Borders
+#### Borders
 
 Most likely use `px`, as most of the time, the border shouldn't need to scale.
 ```css
@@ -2622,7 +2622,7 @@ Most likely use `px`, as most of the time, the border shouldn't need to scale.
 }
 ```
 
-### Font-size
+#### Font-size
 
 Font-size should only be applied at the lowest possible child elements,
 in order to minimize its cascading impact on relative units.
@@ -2656,7 +2656,7 @@ only the first is recommended.
 }
 ```
 
-### Padding and margin
+#### Padding and margin
 
 In order to ensure consistent use of whitespace throughout the application,
 given a component could be used in a variety of contexts,
@@ -2669,7 +2669,7 @@ it may be best to use `rem` for margin and padding than `em`.
 }
 ```
 
-### Media queries
+#### Media queries
 
 [Only use `em` within media query definitions, never pixels](http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/).
 Until there's wider [`rem` support within media queries](http://fvsch.com/code/bugs/rem-mediaquery/),
