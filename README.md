@@ -41,7 +41,8 @@
       - [ps](#ps)
       - [Networking](#networking)
       - [cURL](#curl)
-        - [Nmap](#nmap)
+      - [Netcat](#netcat)
+      - [Nmap](#nmap)
       - [Password generation](#password-generation)
       - [Openssl](#openssl)
       - [Tail log with colored output](#tail-log-with-colored-output)
@@ -796,7 +797,17 @@ curl -u myusername:mypassword http://example.com
 curl --cert client.pem --key key.pem --insecure https://example.com
 ```
 
-##### Nmap
+#### Netcat
+
+Netcat can be used to send and receive data over a network. It can also be used to test redis connections.
+
+```bash
+nc -v -ssl your-redis-url 6379
+# or if you don't have encryption enabled
+nc -v your-redis-url 6379
+```
+
+#### Nmap
 
 ```bash
 # Check single port on single host
