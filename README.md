@@ -94,7 +94,6 @@ This is a repo with a bunch of stuff I use regularly. If you would like to know 
 - [Dump ENV variables to JSON using Python](#dump-env-variables-to-json-using-python)
 - [Kill a process and make it look like an accident](#kill-a-process-and-make-it-look-like-an-accident)
 - [Run an ad-hoc web server](#run-an-ad-hoc-web-server)
-  - [Simple Python web server that logs requests](#simple-python-web-server-that-logs-requests)
 - [Latency comparison](#latency-comparison)
 - [Example async function JavaScript](#example-async-function-javascript)
 
